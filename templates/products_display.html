@@ -4,7 +4,7 @@
 
 
 <div class="row vcenter">
-  <div class="col col-sm-4" ng-repeat="product in products">
+  <div class="col col-sm-4" ng-repeat="product in products | filter: queryTerm">
     <div class="thumbnail text-center">
       <img class="product-image img-responsive" ng-src="{{ product.image_url }}">
       <div class="caption">
