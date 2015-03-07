@@ -18,3 +18,21 @@
   line-height: 18px;
   width: 100px;
 }
+
+.panel-mycolor .panel-heading{
+  background-color: SteelBlue;
+}
+
+.product-image {
+  width: 100px;
+  height: auto;
+}
+
+.col.col-sm-4 {
+  max-height: 290px;
+}
+
+.search-container {
+  margin: 10px;
+  text-align: center;
+}

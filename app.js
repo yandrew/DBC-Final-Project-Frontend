@@ -1,4 +1,4 @@
-var app = angular.module('sellMe',['ui.router']);
+var app = angular.module('sellMe',['ui.router','mgcrea.ngStrap']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/products');
