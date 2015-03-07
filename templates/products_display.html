@@ -1,0 +1,44 @@
+
+<!-- <h1>{{ datetime | date:'mediumTime' }}</h1> -->
+
+<div class="search-container row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div>
+
+
+<div class="col col-sm-4" ng-repeat="product in products">
+  <div class="thumbnail">
+    <img class="product-image" ng-src="{{ product.image_url }}">
+    <div class="caption">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p>{{ product.base_price | currency }}</p>
+      <p><a href="#" class="btn btn-primary" role="button">Bid</a> <a href="#" class="btn btn-default" role="button">Sell Now</a></p>
+    </div>
+  </div>
+</div>
+
+<!--
+  <div class="panel panel-primary" >
+    <div class="panel-heading"><strong>{{ product.name }}</strong></div>
+    <div class="panel-body">
+      <div class="col col-sm-8">
+        {{ product.description }}
+      </div>
+      <div class="col col-sm-2">
+        {{ product.base_price | currency }}
+      </div>
+      <div class="col col-sm-2">
+        <img ng-src="{{product.image_url}}">
+      </div>
+    </div>
+  </div>
+</div> -->
+
