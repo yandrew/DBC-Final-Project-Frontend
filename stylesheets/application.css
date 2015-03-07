@@ -1,0 +1,20 @@
+.title {
+  text-align: center;
+}
+
+.search-bar-container {
+  text-align: center;
+
+}
+
+.search-field {
+  padding: 15px 10px;
+  line-height: 18px;
+  width: 300px;
+}
+
+.search-submit {
+  padding: 15px 10px;
+  line-height: 18px;
+  width: 100px;
+}
