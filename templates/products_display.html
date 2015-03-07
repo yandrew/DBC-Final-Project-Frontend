@@ -1,26 +1,18 @@
 
-<!-- <h1>{{ datetime | date:'mediumTime' }}</h1> -->
+<!-- <h1>{{ datetime | date:'mediumTime' }}</h1>
+ -->
 
-<div class="search-container row">
-  <div class="col-sm-6 col-sm-offset-3">
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search for...">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-</div>
-
-
-<div class="col col-sm-4" ng-repeat="product in products">
-  <div class="thumbnail">
-    <img class="product-image" ng-src="{{ product.image_url }}">
-    <div class="caption">
-      <h3>{{ product.name }}</h3>
-      <p>{{ product.description }}</p>
-      <p>{{ product.base_price | currency }}</p>
-      <p><a href="#" class="btn btn-primary" role="button">Bid</a> <a href="#" class="btn btn-default" role="button">Sell Now</a></p>
+<div class="row vcenter">
+  <div class="col col-sm-4" ng-repeat="product in products">
+    <div class="thumbnail text-center">
+      <img class="product-image img-responsive" ng-src="{{ product.image_url }}">
+      <div class="caption">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p><a href="#" class="btn btn-default" role="button">Bid: <strong>{{ product.base_price | currency }}</strong></a></p>
+        <p><a href="#" class="btn btn-primary" role="button">Sell Now: <strong>{{ product.accept_price | currency }}</strong></a></p>
+        <p> </p>
+      </div>
     </div>
   </div>
 </div>
