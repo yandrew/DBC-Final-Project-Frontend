@@ -1,16 +1,15 @@
-app.factory('Products', function($http, $q) {
+app.factory('Products', function($http, $q, $rootScope) {
   var urlBase = 'data/products.json';
   var products = [];
   return {
     update: function() {
-      var defer = $q.defer();
       $http.get(urlBase).success(function(data){
-        products = data;
-        defer.resolve();
+        for (item in data) {
+          products.push(data[item])
+        }
       }).error(function(err){
         console.log("Products data not found: " + err)
       })
-      return defer.promise
     },
     all: function() {
       return products

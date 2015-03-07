@@ -1,9 +1,15 @@
 
-<ul ng-repeat="product in products">
+<div class="listing-container">
+  <ul ng-repeat="product in products">
+
+    <li>{{ product.name }}</li>
+    <li>{{ product.description }}</li>
+    <li>{{ product.condition }}</li>
+    <li>{{ product.base_price }}</li>
+    <li>{{ product.accept_price }}</li>
+  </ul>
   <img ng-src="{{product.image_url}}"></img>
-  <li>{{ product.name }}</li>
-  <li>{{ product.description }}</li>
-  <li>{{ product.condition }}</li>
-  <li>{{ product.base_price }}</li>
-  <li>{{ product.accept_price }}</li>
-</ul>
+  <h4 class="listing-title">{{ product.name }}</h4>
+  <h6 class="listing-description">{{ product.description }}</h6>
+
+</div>
