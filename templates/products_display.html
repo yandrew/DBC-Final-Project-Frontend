@@ -1,0 +1,36 @@
+
+<!-- <h1>{{ datetime | date:'mediumTime' }}</h1>
+ -->
+
+<div class="row vcenter">
+  <div class="col col-sm-4" ng-repeat="product in products">
+    <div class="thumbnail text-center">
+      <img class="product-image img-responsive" ng-src="{{ product.image_url }}">
+      <div class="caption">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p><a href="#" class="btn btn-default" role="button">Bid: <strong>{{ product.base_price | currency }}</strong></a></p>
+        <p><a href="#" class="btn btn-primary" role="button">Sell Now: <strong>{{ product.accept_price | currency }}</strong></a></p>
+        <p> </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+  <div class="panel panel-primary" >
+    <div class="panel-heading"><strong>{{ product.name }}</strong></div>
+    <div class="panel-body">
+      <div class="col col-sm-8">
+        {{ product.description }}
+      </div>
+      <div class="col col-sm-2">
+        {{ product.base_price | currency }}
+      </div>
+      <div class="col col-sm-2">
+        <img ng-src="{{product.image_url}}">
+      </div>
+    </div>
+  </div>
+</div> -->
+
