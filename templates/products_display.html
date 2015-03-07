@@ -4,7 +4,7 @@
 <div class="search-container row">
   <div class="col-sm-6 col-sm-offset-3">
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search for...">
+      <input type="text" class="form-control" placeholder="Search for..." ng-model="queryTerm">
       <span class="input-group-btn">
         <button class="btn btn-default" type="button">Go!</button>
       </span>
@@ -13,7 +13,7 @@
 </div>
 
 
-<div class="col col-sm-4" ng-repeat="product in products">
+<div class="col col-sm-4" ng-repeat="product in products | filter:queryTerm">
   <div class="thumbnail">
     <img class="product-image" ng-src="{{ product.image_url }}">
     <div class="caption">
