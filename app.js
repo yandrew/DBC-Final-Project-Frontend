@@ -1,7 +1,7 @@
 var app = angular.module('sellMe',['ui.router','mgcrea.ngStrap']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/products');
+  $urlRouterProvider.otherwise('/listings');
   $stateProvider
     .state('marketPlace',{
       url: '/marketPlace',
@@ -18,11 +18,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('products',{
-      url: '/products',
+    .state('listings',{
+      url: '/listings',
       views: {
         'main-container': {
-          templateUrl: 'templates/products_display.html',
+          templateUrl: 'templates/listings_display.html',
           controller: 'SearchCtrl'
         },
         'left-sidebar': {

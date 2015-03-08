@@ -22,9 +22,10 @@
     </thead>
     <tbody>
       <tr ng-repeat="listing in listings|orderBy:orderByField:reverseSort">
-        <td>{{listing.name}}</td>
+        <td><a href="#/listing">{{listing.name}}</a></td>
         <td>{{countdown(listing.expires_at)}}</td>
         <td>{{listing.max_price | currency}}</td>
+        <td>{{timeremaining}}</td>
 
       </tr>
     </tbody>

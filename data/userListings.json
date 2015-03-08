@@ -1,6 +1,6 @@
 [{
   "listing_id": 123,
-  "product_id": 1,
+  "listing_id": 1,
   "name": "Formal shirt",
   "category": "clothing",
   "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
@@ -10,10 +10,10 @@
   "username": "yandrew",
   "max_price": 30,
   "accept_price": 20,
-  "expires_at": "2015-03-08 17:10:08 -0800",
+  "expires_at": "2015-03-08 12:43:08 -0700",
   "offers":[
           {
-            "product_id": 4,
+            "listing_id": 4,
             "name": "Blue normal shirt",
             "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
             "description": "I'm selling a blue shirt with long sleeves",
@@ -29,7 +29,7 @@
                       }
           },
           {
-            "product_id": 5,
+            "listing_id": 5,
             "name": "Red looking Formal shirt",
             "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
             "description": "I got a shirt... and something extra if you want it",
@@ -45,7 +45,7 @@
                       }
           },
           {
-            "product_id": 6,
+            "listing_id": 6,
             "name": "Flower print shirt",
             "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
             "description": "Taking longer than we thought...",
@@ -64,7 +64,7 @@
 },
 {
   "listing_id": 123,
-  "product_id": 1,
+  "listing_id": 1,
   "name": "Banana Hammock",
   "category": "clothing",
   "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
@@ -74,10 +74,10 @@
   "username": "yandrew",
   "max_price": 30,
   "accept_price": 20,
-  "expires_at": "2015-03-07 18:10:08 -0800",
+  "expires_at": "2015-03-08 13:00:00 -0700",
   "offers":[
           {
-            "product_id": 4,
+            "listing_id": 4,
             "name": "Formal shirt",
             "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
             "description": "I'm looking for blue shirt with long sleeves",
@@ -96,7 +96,7 @@
 },
 {
   "listing_id": 123,
-  "product_id": 1,
+  "listing_id": 1,
   "name": "Golf Club",
   "category": "clothing",
   "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
@@ -106,10 +106,10 @@
   "username": "yandrew",
   "max_price": 87,
   "accept_price": 20,
-  "expires_at": "2015-03-09 02:10:08 -0800",
+  "expires_at": "2015-03-10 14:10:08 -0800",
   "offers":[
           {
-            "product_id": 4,
+            "listing_id": 4,
             "name": "Formal shirt",
             "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
             "description": "I'm looking for blue shirt with long sleeves",
@@ -128,7 +128,7 @@
 },
 {
   "listing_id": 123,
-  "product_id": 1,
+  "listing_id": 1,
   "name": "Taylor Swift Greatest Hits Album",
   "category": "clothing",
   "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
@@ -141,7 +141,7 @@
   "expires_at": "2015-03-07 20:10:08 -0800",
   "offers":[
           {
-            "product_id": 4,
+            "listing_id": 4,
             "name": "Formal shirt",
             "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
             "description": "I'm looking for blue shirt with long sleeves",
@@ -160,7 +160,7 @@
 },
 {
   "listing_id": 123,
-  "product_id": 1,
+  "listing_id": 1,
   "name": "Doughnuts",
   "category": "clothing",
   "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
@@ -173,7 +173,7 @@
   "expires_at": "2015-03-07 23:10:08 -0800",
   "offers":[
           {
-            "product_id": 4,
+            "listing_id": 4,
             "name": "Formal shirt",
             "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
             "description": "I'm looking for blue shirt with long sleeves",
