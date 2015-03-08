@@ -1,4 +1,4 @@
-var app = angular.module('sellMe',['ui.router','mgcrea.ngStrap']);
+var app = angular.module('sellMe',['firebase', 'ui.router', 'ngAnimate', 'mgcrea.ngStrap']);  
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/listings');
@@ -22,14 +22,26 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/listings',
       views: {
         'main-container': {
-          templateUrl: 'templates/listings_display.html',
-          controller: 'SearchCtrl'
+          templateUrl: 'templates/listings.html',
+          controller: 'ListingsCtrl'
         },
-        'left-sidebar': {
-          templateUrl: 'templates/leftmenu.html'
-        },
-        'right-sidebar': {
-          templateUrl: 'templates/rightmenu.html'
+        'top-menu': {
+          templateUrl: 'templates/topmenu.html',
+          controller: 'TopMenuCtrl'
+        }
+      }
+    })
+    .state('listings.offers', {
+      url: '/offers/{listingId:int}',
+      views: {
+        'offers': {
+          templateUrl: 'templates/offers.html',
+          controller: 'OffersCtrl',
+          resolve: {
+            listing: function($stateParams, Listing){
+              return Listing.findById($stateParams.listingId)
+            }
+          } 
         }
       }
     })
