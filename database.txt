@@ -1,0 +1,37 @@
+This is the schema I have on my end 
+There are only four collections
+
+User: {
+	id,
+	username
+}
+
+Listing {
+	id,
+	productid,
+  userid,
+	basePrice,
+	acceptPrice,
+	created_at,
+	expire_at,
+}
+
+Offer {
+	id,
+	productid,
+  userid,
+  listingid,
+	price,
+	valid,
+	accepted,
+	created_at
+}
+
+Product: {
+	id,
+	userid,
+	name,
+	description,
+	image,
+	condition
+}

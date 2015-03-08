@@ -1,0 +1,51 @@
+[
+{
+  "id": 1,
+  "product_id": 7,
+  "listing_id": 1,
+  "price": 20,
+  "username": "clarisse",
+  "valid": true,
+  "accepted": false
+}, 
+{
+  "id": 2,
+  "product_id": 8,
+  "created_at": 1425681136143,
+  "username": "yandrew",
+  "valid": true,
+  "accepted": false
+},
+{
+  "id": 3,  
+  "product_id": 9,
+  "created_at": 1425681136143,
+  "username": "randy",
+  "valid": true,
+  "accepted": false
+},
+{
+  "id": 4,
+  "product_id": 10,
+  "created_at": 1425681355021,
+  "username": "randy",
+  "valid": true,
+  "accepted": false
+},
+{
+  "id": 5,  
+  "product_id": 11,
+  "created_at": 1425681136143,
+  "username": "kindy",
+  "valid": true,
+  "accepted": false
+},
+{
+  "id": 6,  
+  "product_id": 12,
+  "created_at": 1425681136143,
+  "username": "kindy",
+  "valid": true,
+  "accepted": false
+}
+]
