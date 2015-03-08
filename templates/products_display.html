@@ -2,7 +2,6 @@
 <!-- <h1>{{ datetime | date:'mediumTime' }}</h1>
  -->
 
-<<<<<<< HEAD
 <div class="search-container row">
   <div class="col-sm-6 col-sm-offset-3">
     <div class="input-group">
@@ -15,17 +14,9 @@
 </div>
 
 
-<div class="col col-sm-4" ng-repeat="product in products | filter:queryTerm">
-  <div class="thumbnail">
-    <img class="product-image" ng-src="{{ product.image_url }}">
-    <div class="caption">
-      <h3>{{ product.name }}</h3>
-      <p>{{ product.description }}</p>
-      <p>{{ product.base_price | currency }}</p>
-      <p><a href="#" class="btn btn-primary" role="button">Bid</a> <a href="#" class="btn btn-default" role="button">Sell Now</a></p>
-=======
+
 <div class="row vcenter">
-  <div class="col col-sm-4" ng-repeat="product in products">
+  <div class="col col-sm-4" ng-repeat="product in products | filter: queryTerm">
     <div class="thumbnail text-center">
       <img class="product-image img-responsive" ng-src="{{ product.image_url }}">
       <div class="caption">
@@ -35,25 +26,6 @@
         <p><a href="#" class="btn btn-primary" role="button">Sell Now: <strong>{{ product.accept_price | currency }}</strong></a></p>
         <p> </p>
       </div>
->>>>>>> 84b523fecea7f4c236c6911a5efcd3d5a1db8c30
     </div>
   </div>
 </div>
-
-<!--
-  <div class="panel panel-primary" >
-    <div class="panel-heading"><strong>{{ product.name }}</strong></div>
-    <div class="panel-body">
-      <div class="col col-sm-8">
-        {{ product.description }}
-      </div>
-      <div class="col col-sm-2">
-        {{ product.base_price | currency }}
-      </div>
-      <div class="col col-sm-2">
-        <img ng-src="{{product.image_url}}">
-      </div>
-    </div>
-  </div>
-</div> -->
-
