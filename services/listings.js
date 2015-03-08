@@ -4,25 +4,27 @@ app.factory('Listings', function($http, $q, $rootScope) {
   return {
     update: function() {
       $http.get(urlBase).success(function(data){
-        console.log(data.listing)
         if (data.listing.length != listings.length){
-          for (item in data) {
-            listings.push(data[item])
+          for (var i = 0; i < data.listing.length; i++) {
+            listings.push(data.listing[i]);
           }
+          // for (item in data.listing) {
+          //   listings.push(data.listing[item]);
+          // }
         }
       }).error(function(err){
-        console.log("Listings data not found: " + err)
-      })
+        console.log("Listings data not found: " + err);
+      });
     },
     all: function() {
-      return listings
+      return listings;
     },
     add: function(listing) {
-      listings.push(listing)
+      listings.push(listing);
     },
     remove: function(listing) {
-      listings.splice(listings.indexof(listing), 1)
+      listings.splice(listings.indexof(listing), 1);
     },
 
-  }
-})
+  };
+});

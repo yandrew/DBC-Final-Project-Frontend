@@ -5,7 +5,7 @@ app.factory('UserListings', function($http, $q, $rootScope) {
     update: function() {
       $http.get(urlBase).success(function(data){
         if (data.length != listings.length){
-          for (listing in data) {
+          for (var listing in data) {
             listings.push(data[listing]);
           }
         }

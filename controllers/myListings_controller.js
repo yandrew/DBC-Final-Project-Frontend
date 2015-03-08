@@ -20,7 +20,7 @@ app.controller('MyListingsCtrl',function($scope, $interval, UserListings) {
   	var differ = ending - timeNow;
   	
   	if (differ < 0){
-  		return "expired!"
+  		return "expired!";
   	}
 		// var timeNow = moment(differ).format('MMMM Do YYYY, h:mm:ss a')
   	// console.log('ending:' + ending + "now: " + now + "diff: " + diff);
