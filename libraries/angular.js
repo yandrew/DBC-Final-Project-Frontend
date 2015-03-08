@@ -2349,12 +2349,12 @@ function publishExternalAPI(angular) {
  *   `'ngModel'`).
  * - `injector()` - retrieves the injector of the current element or its parent.
  * - `scope()` - retrieves the {@link ng.$rootScope.Scope scope} of the current
- *   element or its parent. Requires {@link guide/production#disabling-debug-data Debug Data} to
+ *   element or its parent. Requires {@link guide/listingion#disabling-debug-data Debug Data} to
  *   be enabled.
  * - `isolateScope()` - retrieves an isolate {@link ng.$rootScope.Scope scope} if one is attached directly to the
  *   current element. This getter should be used only on elements that contain a directive which starts a new isolate
  *   scope. Calling `scope()` on this element always returns the original non-isolate scope.
- *   Requires {@link guide/production#disabling-debug-data Debug Data} to be enabled.
+ *   Requires {@link guide/listingion#disabling-debug-data Debug Data} to be enabled.
  * - `inheritedData()` - same as `data()`, but walks up the DOM until a value is found or the top
  *   parent element is reached.
  *
@@ -6588,8 +6588,8 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    * * `ng-binding` CSS class
    * * `$binding` data property containing an array of the binding expressions
    *
-   * You may want to disable this in production for a significant performance boost. See
-   * {@link guide/production#disabling-debug-data Disabling Debug Data} for more.
+   * You may want to disable this in listingion for a significant performance boost. See
+   * {@link guide/listingion#disabling-debug-data Disabling Debug Data} for more.
    *
    * The default value is true.
    */

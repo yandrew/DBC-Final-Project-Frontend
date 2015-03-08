@@ -1,12 +1,12 @@
-app.controller('SearchCtrl', function($scope, $interval, Products) {
+app.controller('SearchCtrl', function($scope, $interval, Listings) {
 
   $scope.datetime = 1425695731013;
   $interval(function(){
     $scope.datetime = $scope.datetime - 1000
   }, 1000)
 
-  $scope.products = Products.all();
-  Products.update();
+  $scope.listings = Listings.all();
+  Listings.update();
 
 
 
