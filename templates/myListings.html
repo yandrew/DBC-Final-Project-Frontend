@@ -24,7 +24,7 @@
       <tr ng-repeat="listing in listings|orderBy:orderByField:reverseSort">
         <td>{{listing.name}}</td>
         <td>{{countdown(listing.expires_at)}}</td>
-        <td>${{listing.max_price}}</td>
+        <td>{{listing.max_price | currency}}</td>
 
       </tr>
     </tbody>

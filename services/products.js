@@ -4,8 +4,10 @@ app.factory('Products', function($http, $q, $rootScope) {
   return {
     update: function() {
       $http.get(urlBase).success(function(data){
-        for (item in data) {
-          products.push(data[item])
+        if (data.length != products.length){
+          for (item in data) {
+            products.push(data[item])
+          }
         }
       }).error(function(err){
         console.log("Products data not found: " + err)

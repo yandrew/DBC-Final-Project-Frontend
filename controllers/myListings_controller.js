@@ -2,25 +2,24 @@ app.controller('MyListingsCtrl',function($scope, $interval, UserListings) {
 	$scope.orderByField = 'expires_at';
   $scope.reverseSort = false;
 
+	UserListings.update();
+
   $scope.listings = UserListings.all();
   // $interval(function(){
   //   $scope.timeremaining = $scope.datetime - 1000
   // }, 1000)
 
-	UserListings.update();
   $scope.countdown = function(datetime) {
   	if (new Date(datetime) > new Date()){
 			var display = moment(datetime).fromNow();
-  		// console.log(display);
 			return display;
 		
 		} else {
 				return "Ended!";
   	}
-  	
+  };
 
 
-  }
   // 		var end = new Date(datetime);
   // 		var now = new Date();
 
