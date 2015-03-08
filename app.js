@@ -1,18 +1,13 @@
 var app = angular.module('sellMe',['ui.router','mgcrea.ngStrap']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/products');
+  $urlRouterProvider.otherwise('/listings');
   $stateProvider
     .state('marketPlace',{
       url: '/marketPlace',
-      templateUrl: 'templates/marketPlace.html',
-      controller: 'MarketCtrl'
-    })
-    .state('products',{
-      url: '/products',
       views: {
         'main-container': {
-          templateUrl: 'templates/products_display.html',
+          templateUrl: 'templates/marketPlace.html',
           controller: 'SearchCtrl'
         },
         'left-sidebar': {
@@ -23,4 +18,34 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-})
+    .state('listings',{
+      url: '/listings',
+      views: {
+        'main-container': {
+          templateUrl: 'templates/listings_display.html',
+          controller: 'SearchCtrl'
+        },
+        'left-sidebar': {
+          templateUrl: 'templates/leftmenu.html'
+        },
+        'right-sidebar': {
+          templateUrl: 'templates/rightmenu.html'
+        }
+      }
+    })
+    .state('myListings',{
+      url: '/mylistings',
+      views: {
+        'main-container': {
+          templateUrl: 'templates/myListings.html',
+          controller: 'MyListingsCtrl'
+        },
+        'left-sidebar': {
+          templateUrl: 'templates/leftmenu.html'
+        },
+        'right-sidebar': {
+          templateUrl: 'templates/rightmenu.html'
+        }
+      }
+    })
+});
