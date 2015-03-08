@@ -9,7 +9,18 @@ app.controller('MyListingsCtrl',function($scope, $interval, UserListings) {
 
 	UserListings.update();
   $scope.countdown = function(datetime) {
-  	return (datetime) }
+  	if (new Date(datetime) > new Date()){
+			var display = moment(datetime).fromNow();
+  		// console.log(display);
+			return display;
+		
+		} else {
+				return "Ended!";
+  	}
+  	
+
+
+  }
   // 		var end = new Date(datetime);
   // 		var now = new Date();
 

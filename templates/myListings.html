@@ -10,7 +10,7 @@
         </th>
         <th>
           <a href="#" ng-click="orderByField='expires_at'; reverseSort = !reverseSort">
-            Last Name <span ng-show="orderByField == 'expires_at'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            Ending <span ng-show="orderByField == 'expires_at'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
           </a>
         </th>
         <th>
@@ -24,7 +24,7 @@
       <tr ng-repeat="listing in listings|orderBy:orderByField:reverseSort">
         <td>{{listing.name}}</td>
         <td>{{countdown(listing.expires_at)}}</td>
-        <td>{{listing.max_price}}</td>
+        <td>${{listing.max_price}}</td>
 
       </tr>
     </tbody>
