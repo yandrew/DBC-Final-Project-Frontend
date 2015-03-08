@@ -1,6 +1,8 @@
 
-<!-- <h1>{{ datetime | date:'mediumTime' }}</h1> -->
+<!-- <h1>{{ datetime | date:'mediumTime' }}</h1>
+ -->
 
+<<<<<<< HEAD
 <div class="search-container row">
   <div class="col-sm-6 col-sm-offset-3">
     <div class="input-group">
@@ -21,6 +23,19 @@
       <p>{{ product.description }}</p>
       <p>{{ product.base_price | currency }}</p>
       <p><a href="#" class="btn btn-primary" role="button">Bid</a> <a href="#" class="btn btn-default" role="button">Sell Now</a></p>
+=======
+<div class="row vcenter">
+  <div class="col col-sm-4" ng-repeat="product in products">
+    <div class="thumbnail text-center">
+      <img class="product-image img-responsive" ng-src="{{ product.image_url }}">
+      <div class="caption">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p><a href="#" class="btn btn-default" role="button">Bid: <strong>{{ product.base_price | currency }}</strong></a></p>
+        <p><a href="#" class="btn btn-primary" role="button">Sell Now: <strong>{{ product.accept_price | currency }}</strong></a></p>
+        <p> </p>
+      </div>
+>>>>>>> 84b523fecea7f4c236c6911a5efcd3d5a1db8c30
     </div>
   </div>
 </div>

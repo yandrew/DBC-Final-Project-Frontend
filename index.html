@@ -16,9 +16,39 @@
   <link rel="stylesheet" href="stylesheets/application.css">
 </head>
 <body>
-  <h3 class="title">Sell Me</h3>
+
+<div class="page-header text-center main-page-title">
+  <h1>SellMe.io</h1>
+</div>
+
+
 <div class="container">
-<div ui-view></div>
+
+<div class="menu-main-page row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div ui-view="left-sidebar"></div>
+    <div class="col col-sm-3"></div>
+  </div>
+
+
+  <div class="search-container row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="I want to sell ...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Go!</button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-sm-6 -->
+    <div class="col col-sm-3"></div>
+  </div>
+
+  <div class="row">
+    <div class="col col-sm-10 col-sm-offset-1">
+      <div ui-view="main-container"></div>
+    </div>
+  </div>
+
 </div>
 
 </body>

@@ -10,7 +10,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('products',{
       url: '/products',
-      templateUrl: 'templates/products_display.html',
-      controller: 'SearchCtrl'
+      views: {
+        'main-container': {
+          templateUrl: 'templates/products_display.html',
+          controller: 'SearchCtrl'
+        },
+        'left-sidebar': {
+          templateUrl: 'templates/leftmenu.html'
+        },
+        'right-sidebar': {
+          templateUrl: 'templates/rightmenu.html'
+        }
+      }
     })
 })
