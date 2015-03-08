@@ -10,7 +10,7 @@
         </div>
         <div class="panel-body">
           <div class="row">
-            <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle"> </div>
+            <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" class="img-thumbnail img-responsive img-circle" src="https://s-media-cache-ak0.pinimg.com/originals/cc/17/70/cc1770ff2a070b998e6812dd7c3ba77d.jpg" class="img-circle"> </div>
 
                 <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
                   <dl>
@@ -29,29 +29,28 @@
                     <tbody>
                       <tr>
                         <td>Name:</td>
-                        <td>Programming</td>
+                        <td>{{ name }}</td>
                       </tr>
                       <tr>
                         <td>Email:</td>
-                        <td>06/23/2013</td>
+                        <td>{{ email }}</td>
                       </tr>
                       <tr>
                         <td>Rating:</td>
-                        <td>01/24/1988</td>
+                        <td>{{ rating }}</td>
                       </tr>
 
                       <tr>
                        <tr>
                         <td>Member Since:</td>
-                        <td>Male</td>
+                        <td>{{ created_at }}</td>
                       </tr>
                       <tr>
                         <td>Most Recent Activity:</td>
-                        <td>Metro Manila,Philippines</td>
+                        <td>{{ updated_at }}</td>
                       </tr>
                       <td>Bio:</td>
-                      <td>
-                      </td>
+                      <td>{{ bio }}</td>
 
                     </tr>
 

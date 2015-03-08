@@ -29,6 +29,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
           controller: 'TopMenuCtrl'
         }
       }
+<<<<<<< HEAD
     })
     .state('listings.offers', {
       url: '/offers/{listingId:int}',
@@ -42,6 +43,23 @@ app.config(function($stateProvider, $urlRouterProvider) {
            }
           }
         }
+    }
+  })
+  .state('userProfile',{
+    url: '/userProfile',
+    data: {
+        requireLogin: true // KTT: playing around with this method
+      },
+    views: {
+      'main-container': {
+        templateUrl: 'templates/userProfile.html',
+        controller: 'UserProfileCtrl'
+      },
+      'left-sidebar': {
+        templateUrl: 'templates/leftmenu.html'
+      },
+      'right-sidebar': {
+        templateUrl: 'templates/rightmenu.html'
       }
     })
     .state('myListings',{

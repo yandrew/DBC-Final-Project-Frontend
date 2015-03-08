@@ -1,4 +1,4 @@
-app.controller('UserProfileCtrl', function($scope, $interval, Products) {
+app.controller('UserProfileCtrl', function($scope, $interval, Users) {
 
   $scope.datetime = 1425695731013;
   $interval(function(){
