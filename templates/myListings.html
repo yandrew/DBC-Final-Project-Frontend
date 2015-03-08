@@ -1,17 +1,33 @@
-<div class="row vcenter" ng-repeat="listing in listings">
-	<div class="panel panel-default">
-	    <div class="panel-heading">{{ listing.offers[0].offer_price }}</div>
-	    <div class="panel-body">
-	        listing 1
-	    </div>
-	    <div class="panel-body">
-	        listing 2
-	    </div>
-	    <div class="panel-body">
-	        listing 3
-	    </div>
-	    <div class="panel-body">
-	        listing 4
-	    </div>
-	</div>
-</div>
+ <section>
+  <span class="label">Ordered By: {{orderByField}}, Reverse Sort: {{reverseSort}}</span><br><br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>
+          <a href="#" ng-click="orderByField='name'; reverseSort = !reverseSort">
+          Product Title <span ng-show="orderByField == 'name'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+        <th>
+          <a href="#" ng-click="orderByField='expires_at'; reverseSort = !reverseSort">
+            Last Name <span ng-show="orderByField == 'expires_at'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+        <th>
+          <a href="#" ng-click="orderByField='max_price'; reverseSort = !reverseSort">
+          Price <span ng-show="orderByField == 'max_price'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="listing in listings|orderBy:orderByField:reverseSort">
+        <td>{{listing.name}}</td>
+        <td>{{listing.expires_at}}</td>
+        <td>{{listing.max_price}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</section>
+

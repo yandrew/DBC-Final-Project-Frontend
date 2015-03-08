@@ -6,7 +6,7 @@
   "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
   "description": "I'm looking for blue shirt with long sleeves",
   "condition": "new",
-  "created_at": 1425681136143,
+  "created_at": "1425681136143",
   "username": "yandrew",
   "max_price": 30,
   "accept_price": 20,
@@ -59,13 +59,13 @@
                       "avatar": "https://iwright.files.wordpress.com/2010/05/jim-bob.jpg",
                       "rating": 4
                       }
-          },
+          }
           ]
 },
 {
   "listing_id": 123,
   "product_id": 1,
-  "name": "Formal shirt",
+  "name": "Banana Hammock",
   "category": "clothing",
   "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
   "description": "I'm looking for blue shirt with long sleeves",
@@ -97,14 +97,14 @@
 {
   "listing_id": 123,
   "product_id": 1,
-  "name": "Formal shirt",
+  "name": "Golf Club",
   "category": "clothing",
   "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
   "description": "I'm looking for blue shirt with long sleeves",
   "condition": "new",
   "created_at": 1425681136143,
   "username": "yandrew",
-  "max_price": 30,
+  "max_price": 87,
   "accept_price": 20,
   "expires_at": "2015-03-08 17:10:08 -0800",
   "offers":[
@@ -129,14 +129,14 @@
 {
   "listing_id": 123,
   "product_id": 1,
-  "name": "Formal shirt",
+  "name": "Taylor Swift Greatest Hits Album",
   "category": "clothing",
   "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
   "description": "I'm looking for blue shirt with long sleeves",
   "condition": "new",
   "created_at": 1425681136143,
   "username": "yandrew",
-  "max_price": 30,
+  "max_price": 14,
   "accept_price": 20,
   "expires_at": "2015-03-08 17:10:08 -0800",
   "offers":[
@@ -161,14 +161,14 @@
 {
   "listing_id": 123,
   "product_id": 1,
-  "name": "Formal shirt",
+  "name": "Doughnuts",
   "category": "clothing",
   "image_url": "https://s7.jcrew.com/is/image/jcrew/60763_WW8415?$pdp_fs418$",
   "description": "I'm looking for blue shirt with long sleeves",
   "condition": "new",
   "created_at": 1425681136143,
   "username": "yandrew",
-  "max_price": 30,
+  "max_price": 4,
   "accept_price": 20,
   "expires_at": "2015-03-08 17:10:08 -0800",
   "offers":[
