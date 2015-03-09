@@ -1,8 +1,8 @@
 
-app.controller('UserOffersCtrl', function($scope, $interval, Offers, $stateParams, Timer) {
+app.controller('UserOffersCtrl', function($scope, $interval, Offer, $stateParams, Timer) {
 
-  Offers.update($stateParams.user_id);
-  $scope.offers = Offers.all();
+  Offer.update($stateParams.user_id);
+  $scope.offers = Offer.all();
   $scope.countDown = function(timeEnd) {
     return Timer.countdown(timeEnd);
   };

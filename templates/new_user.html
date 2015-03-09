@@ -1,0 +1,45 @@
+<h3 class="lead text-center">Create an account</h3>
+<hr>
+<form class="form-horizontal" ng-submit="makeUser()" novalidate>
+  <div class="form-group">
+    <label for="userfullname" class="col-sm-2 control-label">Full Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="userfullname" placeholder="Please enter your full name" ng-model="newUser.name">
+    </div>
+  </div>	
+  <div class="form-group">
+    <label for="username" class="col-sm-2 control-label">Username</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="username" placeholder="Pick a username" ng-model="newUser.username">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="useremail" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="useremail" placeholder="Enter your email" ng-model="newUser.email">
+    </div>
+  </div>  
+  <div class="form-group">
+    <label for="userbio" class="col-sm-2 control-label">Bio</label>
+    <div class="col-sm-10">
+		<textarea class="form-control" rows="3" id="userbio" placeholder="Tell us a little about you" ng-model="newUser.bio"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="useravatar" class="col-sm-2 control-label">Avatar</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="useravatar" placeholder="A link to a picture that represents you" ng-model="newUser.avatar">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="userpassword" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input class="form-control" id="userpassword" type="password" ng-model="newUser.password" placeholder="Choose a password">
+    </div>
+  </div>
+	  <div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	      <button type="submit" class="btn btn-primary">Register</button>
+	    </div>
+	  </div>
+</form>

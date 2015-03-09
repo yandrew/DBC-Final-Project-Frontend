@@ -3,26 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <title>Sell Me</title>
+  <!-- Angular + Bootstrap-->
   <script src="libraries/angular.js"></script>
+  <script src="libraries/angular-ui-router.js"></script>
+  <script src="libraries/angular-animate.min.js"></script>  
   <script src="libraries/angular-strap.min.js"></script>
   <script src="libraries/angular-strap.tpl.min.js"></script>
   <script src="libraries/angular-ui-router.js"></script>
   <script src="libraries/moment.js"></script>
+
+  <!-- AppFiles -->
   <script src="app.js"></script>
-  <script src="controllers/market_controller.js"></script>
+  <script src="services/listings.js"></script>
+  <script src="services/offers.js"></script>
+  <script src="services/users.js"></script>
+  <script src="services/products.js"></script>
+  <script src="services/listings.js"></script>
+  <script src="services/userListings.js"></script>
+  <script src="services/countdown_service.js"></script>
+  <script src="services/offers.js"></script>
+  <script src="controllers/topmenu_controller.js"></script>
+  <script src="controllers/listings_controller.js"></script>
+  <script src="controllers/offers_controller.js"></script>
+  <script src="controllers/new_listing_controller.js"></script>
+  <script src="controllers/new_user_controller.js"></script>
   <script src="controllers/search_controller.js"></script>
   <script src="controllers/myListings_controller.js"></script>
   <script src="controllers/userOffers_controller.js"></script>
-  <script src="services/listings.js"></script>
-  <script src="services/userListings.js"></script>
-<<<<<<< HEAD
-  <script src="services/countdown_service.js"></script>
-=======
->>>>>>> 141f98b839fc2370f62edc3d2e5969375939f926
-  <script src="services/offers.js"></script>
-
 
   <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/angular-motion.min.css">  
   <link rel="stylesheet" href="stylesheets/application.css">
 </head>
 <body>
@@ -34,31 +44,29 @@
 
   <div class="container">
 
-    <div class="menu-main-page row">
-      <div class="col-sm-6 col-sm-offset-3">
-          <div ui-view="left-sidebar"></div>
-        <div class="col col-sm-3"></div>
-      </div>
+  <div class="menu-main-page row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div ui-view="top-menu"></div>
+    <div class="col col-sm-3"></div>
+  </div>
 
-      <div class="search-container row">
-        <div class="col-sm-6 col-sm-offset-3">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="I want to sell ..." ng-model="queryTerm">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Go!</button>
-            </span>
-          </div><!-- /input-group -->
-        </div><!-- /.col-sm-6 -->
-        <div class="col col-sm-3"></div>
-      </div>
-
-      <div class="row">
-        <div class="col col-sm-10 col-sm-offset-1">
-          <div ui-view="main-container"></div>
-        </div>
-      </div>
+  <div class="search-container row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="I want to sell ..." ng-model="queryTerm">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Go!</button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-sm-6 -->
+    <div class="col col-sm-3"></div>
+  </div>
 
     </div>
+  </div>
+
+  <div class="col col-sm-10 col-sm-offset-2">
+    <div ui-view="main-container"></div>  
   </div>
 
 </body>
