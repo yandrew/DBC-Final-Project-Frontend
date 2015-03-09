@@ -47,5 +47,20 @@ app.config(function($stateProvider, $urlRouterProvider) {
           templateUrl: 'templates/rightmenu.html'
         }
       }
+    })
+    .state('userOffers',{
+      url: '/user/:user_id/offers',
+      views: {
+        'main-container': {
+          templateUrl: 'templates/myOffers.html',
+          controller: 'UserOffersCtrl'
+        },
+        'left-sidebar': {
+          templateUrl: 'templates/leftmenu.html'
+        },
+        'right-sidebar': {
+          templateUrl: 'templates/rightmenu.html'
+        }
+      }
     });
 });

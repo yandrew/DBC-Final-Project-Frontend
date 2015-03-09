@@ -9,9 +9,6 @@ app.factory('Listings', function($http, $q, $rootScope) {
           for (var i = 0; i < data.length; i++) {
             listings.push(data[i]);
           }
-          // for (item in data.listing) {
-          //   listings.push(data.listing[item]);
-          // }
         }
       }).error(function(err){
         console.log("Listings data not found: " + err);

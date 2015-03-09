@@ -91,7 +91,7 @@ app.controller('MyListingsCtrl',function($scope, $interval, UserListings, Timer)
   // }
 
 
-})
+});
 
 
 // app.controller('SearchCtrl', function($scope, $interval, Listings) {
