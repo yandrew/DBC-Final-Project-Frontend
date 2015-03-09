@@ -52,7 +52,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/user/:user_id/offers',
       views: {
         'main-container': {
-          templateUrl: 'templates/userOffers.html',
+          templateUrl: 'templates/myOffers.html',
           controller: 'UserOffersCtrl'
         },
         'left-sidebar': {
