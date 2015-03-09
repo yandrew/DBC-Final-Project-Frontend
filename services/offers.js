@@ -1,8 +1,10 @@
-app.factory('Offers', function($http, $q, $rootScope, $stateParams) {
+app.factory('Offers', function($http, $q, $rootScope) {
   var urlBase = 'http://localhost:3000';
-  var userOffers = [];
+  var offers = [];
   return {
     update: function(user_id) {
+      console.log(user_id)
+      console.log(data)
       $http.get(urlBase + '/user/'+ user_id + '/offers').success(function(data){
         if (data.length != offers.length){
           for (var item in data) {
