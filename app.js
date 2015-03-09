@@ -38,9 +38,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
           templateUrl: 'templates/offers.html',
           controller: 'OffersCtrl',
           resolve: {
-            listing: function($stateParams, Listing){
-              return Listing.findById($stateParams.listingId)
-            }
+           listing: function($stateParams, Listing){
+             return Listing.findById($stateParams.listingId)
+           }
           } 
         }
       }

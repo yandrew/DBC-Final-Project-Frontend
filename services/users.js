@@ -1,14 +1,12 @@
-app.factory('User', function($http, $q, $rootScope, $firebaseArray, $firebaseObject) {
+app.factory('User', function($http, $q, $rootScope) {
   var urlBase = 'data/users.json';
-  var ref = new Firebase("https://sell-me.firebaseio.com/users")
-  $firebaseObject(ref).$remove();
-  var users = $firebaseArray(ref);
+  var users = [];
 
   return {
     update: function() {
       $http.get(urlBase).success(function(data){
         for (item in data) {
-          users.$add(data[item])
+          users.push(data[item])
         }
       }).error(function(err){
         console.log("users data not found: " + err)
@@ -18,10 +16,10 @@ app.factory('User', function($http, $q, $rootScope, $firebaseArray, $firebaseObj
       return users
     },
     add: function(user) {
-      users.$add(user)
+      users.push(user)
     },
     remove: function(user) {
-      users.$remove(users.indexof(user))
+      users.splice(users.indexof(user), 1)
     },
     findById: function(userId) {
       var userFound;

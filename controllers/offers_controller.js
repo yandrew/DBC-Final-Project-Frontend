@@ -1,15 +1,21 @@
-app.controller('OfferCtrl', function($scope, $timeout, $state, $stateParams, Listing, Offer, listing){
+app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, Listing, Offer, listing){
 
 	$scope.listing = listing
+
 	$timeout(function(){
 		if (!$scope.listing)
 			$scope.listing = Listing.findById($stateParams.listingId);
-			$scope.newOffer.productPrice = $scope.listing.current_price;
-	}, 20)
+			$scope.newOffer.productPrice = $scope.listing.lowest_price;
+	}, 1000)
 
-	$scope.offers = Offer.all();
+	console.log($stateParams.listingId)
+	Offer.getOffers($stateParams.listingId).then(function(res){
+		$scope.offers = res.data[0].offers;
+		console.log('offers', $scope.offers)
+	})
+
 	$scope.newOffer = {}
-	if (listing) $scope.newOffer.productPrice = listing.current_price
+	if (listing) $scope.newOffer.productPrice = listing.lowest_price
 
 	$scope.makeOffer = function() {
 		Offer.add($scope.newOffer)

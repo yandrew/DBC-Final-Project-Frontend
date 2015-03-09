@@ -1,55 +1,11 @@
-<<<<<<< HEAD
-app.factory('Listings', function($http, $q, $rootScope) {
-  var urlBase = 'http://localhost:3000';
+app.factory('Listing', function($http, $q, $rootScope) {
+  var urlBase = 'http://localhost:3000/listings';
   var listings = [];
-  var userListings = [];
-  return {
-    update: function() {
-      $http.get(urlBase + "/listings").success(function(data){
-        if (data.length != listings.length){
-          for (var i = 0; i < data.length; i++) {
-            listings.push(data[i]);
-          }
-        }
-      }).error(function(err){
-        console.log("Listings data not found: " + err);
-      });
-    },
-    all: function() {
-      return listings;
-    },
-    add: function(listing) {
-      listings.push(listing);
-    },
-    remove: function(listing) {
-      listings.splice(listings.indexof(listing), 1);
-    },
-    updateUserListings: function(user_id) {
-      $http.get(urlBase + "/user/" + user_id + "listings").success(function(data){
-        if (data.length != userListings.length){
-          for (var i = 0; i < data.length; i++) {
-            userListings.push(data[i]);
-          }
-        }
-      }).error(function(err){
-        console.log("Listings data not found for user: " + err);
-      });
-    }
-
-  };
-});
-=======
-app.factory('Listing', function($http, $q, $rootScope, $firebaseArray, $firebaseObject) {
-  var urlBase = 'data/listings.json';
-  var ref = new Firebase("https://sell-me.firebaseio.com/listings")
-  $firebaseObject(ref).$remove();
-  var listings = $firebaseArray(ref);
-
   return {
     update: function() {
       $http.get(urlBase).success(function(data){
         for (item in data) {
-          listings.$add(data[item])
+          listings.push(data[item])
         }
       }).error(function(err){
         console.log("Listings data not found: " + err)
@@ -59,15 +15,15 @@ app.factory('Listing', function($http, $q, $rootScope, $firebaseArray, $firebase
       return listings
     },
     add: function(listing) {
-      listings.$add(listing)
+      listings.push(listing)
     },
     remove: function(listing) {
-      listings.$remove(listings.indexof(listing))
+      listings.splice(listings.indexof(listing), 1)
     },
     findById: function(listingId) {
       var listingFound;
       listings.forEach(function(elem){
-        if (elem.id === listingId) {
+        if (elem.listing_id === listingId) {
           console.log('HERE', elem)
           listingFound = elem;
         }
@@ -76,4 +32,17 @@ app.factory('Listing', function($http, $q, $rootScope, $firebaseArray, $firebase
     }
   }
 })
->>>>>>> refactored factories to reflect only the necessary data model
+
+    // "listing_id": 1,
+    // "product_id": 6,
+    // "name": "Sleek Cotton Chair",
+    // "category": "Baby Transport Accessories",
+    // "image_url": "http://lorempixel.com/400/200/technics/2",
+    // "description": "lavender",
+    // "condition": "new",
+    // "created_at": "2015-03-09T02:13:03.467Z",
+    // "expires_at": "2015-03-13T18:15:24.000Z",
+    // "username": "tommie.okeefe",
+    // "max_price": 286.0,
+    // "accept_price": 47.0,
+    // "lowest_offer": 156.136708215258

@@ -1,14 +1,12 @@
-app.factory('Product', function($http, $q, $rootScope, $firebaseArray, $firebaseObject) {
+app.factory('Product', function($http, $q, $rootScope) {
   var urlBase = 'data/products.json';
-  var ref = new Firebase("https://sell-me.firebaseio.com/products")
-  $firebaseObject(ref).$remove();  
-  var products = $firebaseArray(ref);
+  var products = [];
 
   return {
     update: function() {
       $http.get(urlBase).success(function(data){
         for (item in data) {
-          products.$add(data[item])
+          products.push(data[item])
         }
       }).error(function(err){
         console.log("products data not found: " + err)
@@ -18,10 +16,10 @@ app.factory('Product', function($http, $q, $rootScope, $firebaseArray, $firebase
       return products
     },
     add: function(product) {
-      products.$add(product)
+      products.push(product)
     },
     remove: function(product) {
-      products.$remove(products.indexof(product))
+      products.splice(products.indexof(product), 1)
     },
     findById: function(productId) {
       var productFound;

@@ -2,7 +2,7 @@
 <!-- <h1>{{ datetime | date:'mediumTime' }}</h1>
  -->
 
-<div ui-view="bid">
+<div ui-view="offers">
 <div class="row vcenter">
   <div class="col col-sm-4" ng-repeat="listing in listings | filter: queryTerm">
     <div class="thumbnail text-center">
@@ -10,7 +10,7 @@
       <div class="caption">
         <h3>{{ listing.name }}</h3>
         <p>{{ listing.description }}</p>
-        <p><a ui-sref="listings.bid({listingId: listing.id})" class="btn btn-default" role="button">Bid: <strong>{{ listing.base_price | currency }}</strong></a></p>
+        <p><a ui-sref="listings.offers({listingId: listing.listing_id})" class="btn btn-default" role="button">Bid: <strong>{{ listing.max_price | currency }}</strong></a></p>
         <p><a href="#" class="btn btn-primary" role="button">Sell now: <strong>{{ listing.accept_price | currency }}</strong></a></p>
         <p> </p>
       </div>
