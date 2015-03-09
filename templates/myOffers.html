@@ -1,5 +1,4 @@
- <section>
-  
+<section>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -21,10 +20,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="listing in listings|orderBy:orderByField:reverseSort">
-        <td><a href="#/listings/{{listing.id}}">{{listing.name}}</a></td>
-        <td>{{countDown(listing.expires_at)}}</td>
-        <td>{{listing.max_price | currency}}</td>
+      <tr ng-repeat="offer in offers|orderBy:orderByField:reverseSort">
+        <td><a href="#/offers/{{offer.id}}">{{offer.name}}</a></td>
+        <td>{{countDown(offer.expires_at)}}</td>
+        <td>{{offer.max_price | currency}}</td>
       </tr>
     </tbody>
   </table>

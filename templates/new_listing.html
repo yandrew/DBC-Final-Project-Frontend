@@ -1,0 +1,51 @@
+<h3 class="lead text-center">Create a new listing</h3>
+<hr>
+<form class="form-horizontal" ng-submit="makeListing()" novalidate>
+  <div class="form-group">
+    <label for="productName" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="productName" placeholder="Describe in one or few words what you are looking for" ng-model="newListing.name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="productDescription" class="col-sm-2 control-label">Description</label>
+    <div class="col-sm-10">
+		<textarea class="form-control" rows="3" id="productDescription" placeholder="Describe in many words what you are looking for! Time to be philosophical. Make it as detailed as you can" ng-model="newListing.description"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="productCondition" class="col-sm-2 control-label">Condition</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="productCondition" placeholder="Are you looking for a new product or an used one?" ng-model="newListing.condition">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="productUrl" class="col-sm-2 control-label">Image</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="productUrl" placeholder="Copy a link to your product image" ng-model="newListing.image_url">
+    </div>
+  </div>
+	  <div class="form-group">
+	    <label for="productPrice" class="col-sm-2 control-label">Max Price</label>
+	    <div class="col-sm-10">
+      <div class="input-group">
+        <div class="input-group-addon">$</div>
+	      <input type="number" step="0.01" class="form-control" id="productPrice" placeholder="Set the max price you are willing to pay" ng-model="newListing.max_price">
+	    </div>
+      </div> 
+	  </div>
+	  <div class="form-group">
+	    <label for="productPrice" class="col-sm-2 control-label">Buy Now Price</label>
+	    <div class="col-sm-10">
+      <div class="input-group">
+        <div class="input-group-addon">$</div>
+	      <input type="number" step="0.01" class="form-control" id="productPrice" placeholder="Set the price that is good enough for you to buy it now" ng-model="newListing.accept_price">
+	    </div>
+      </div> 
+	  </div>
+	  <div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	      <button type="submit" class="btn btn-primary">Create a Listing</button>
+	    </div>
+	  </div>
+</form>

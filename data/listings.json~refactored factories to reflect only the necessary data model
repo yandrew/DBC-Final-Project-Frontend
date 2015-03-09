@@ -1,0 +1,49 @@
+[{
+  "id": 1,
+  "product_id": 1,
+  "created_at": 1425681136143,
+  "username": "yandrew",
+  "base_price": 30,
+  "accept_price": 20
+},
+{
+  "id": 2,
+  "product_id": 2,
+  "created_at": 1425681136143,
+  "username": "clarisse",
+  "base_price": 50,
+  "accept_price": 40
+},
+{
+  "id": 3,  
+  "product_id": 3,
+  "created_at": 1425681136143,
+  "username": "yandrew",
+  "base_price": 100,
+  "accept_price": 50  
+},
+{
+  "id": 4,
+  "product_id": 4,
+  "created_at": 1425681355021,
+  "username": "kindy",
+  "base_price": 200,
+  "accept_price": 100  
+},
+{
+  "id": 5,  
+  "product_id": 5,
+  "created_at": 1425681136143,
+  "username": "yandrew",
+  "base_price": 2000,
+  "accept_price": 1500  
+},
+{
+  "id": 6,  
+  "product_id": 6,
+  "created_at": 1425681136143,
+  "username": "randy",
+  "base_price": 200,
+  "accept_price": 20  
+}
+]
