@@ -1,5 +1,4 @@
 app.factory('User', function($http, $q, $rootScope) {
-<<<<<<< HEAD
   var urlBase = 'data/users.json';
   var users = [];
 
@@ -34,34 +33,6 @@ app.factory('User', function($http, $q, $rootScope) {
     },
     postNew: function(params) {
       return $http.post('http://localhost:3000/users/', params)
-    }    
+    }
   }
 })
-=======
-  var urlBase = 'data/user.json';
-  var listings = [];
-  return {
-    update: function() {
-      $http.get(urlBase).success(function(data){
-        if (data.length != listings.length){
-          for (listing in data) {
-            listings.push(data[listing]);
-          }
-        }
-
-      }).error(function(err){
-        console.log("Listing data not found: " + err + data);
-      });
-    },
-    all: function() {
-      return listings;
-    },
-    add: function(listing) {
-      listings.push(listing);
-    },
-    remove: function(listing) {
-      listings.splice(listings.indexof(listing), 1);
-    }
-  };
-});
->>>>>>> built skeleton for user profile page

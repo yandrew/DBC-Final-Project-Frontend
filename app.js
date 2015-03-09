@@ -29,7 +29,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
           controller: 'TopMenuCtrl'
         }
       }
-<<<<<<< HEAD
     })
     .state('listings.offers', {
       url: '/offers/{listingId:int}',
