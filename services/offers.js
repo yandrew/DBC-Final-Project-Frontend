@@ -27,3 +27,4 @@ app.factory('Offers', function($http, $q, $rootScope) {
 
   };
 });
+

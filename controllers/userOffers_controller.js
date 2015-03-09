@@ -1,3 +1,4 @@
+
 app.controller('UserOffersCtrl', function($scope, $interval, Offers, $stateParams, Timer) {
 
   Offers.update($stateParams.user_id);
@@ -5,6 +6,5 @@ app.controller('UserOffersCtrl', function($scope, $interval, Offers, $stateParam
   $scope.countDown = function(timeEnd) {
     return Timer.countdown(timeEnd);
   };
-
 
 });
