@@ -1,15 +1,31 @@
 
-<div class="row vcenter">
-  <div class="col col-sm-4" ng-repeat="listing in listings | filter: queryTerm">
-    <div class="thumbnail text-center">
-      <img class="listing-image img-responsive" ng-src="{{ listing.image_url }}">
-      <div class="caption">
-        <h3>{{ listing.name }}</h3>
-        <p>{{ listing.description }}</p>
-        <p><a href="#" class="btn btn-default" role="button">Bid: <strong>{{ listing.base_price | currency }}</strong></a></p>
-        <p><a href="#" class="btn btn-primary" role="button">Sell Now: <strong>{{ listing.accept_price | currency }}</strong></a></p>
-
-      </div>
-    </div>
-  </div>
-</div>
+ <section>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>
+          <a href="#" ng-click="orderByField='name'; reverseSort = !reverseSort">
+          Product Title <span ng-show="orderByField == 'name'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+        <th>
+          <a href="#" ng-click="orderByField='expires_at'; reverseSort = !reverseSort">
+            Ending <span ng-show="orderByField == 'expires_at'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+        <th>
+          <a href="#" ng-click="orderByField='max_price'; reverseSort = !reverseSort">
+          Price <span ng-show="orderByField == 'max_price'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="offer in offers|orderBy:orderByField:reverseSort">
+        <td><a href="#/offers/{{offer.id}}">{{offer.name}}</a></td>
+        <td>{{countDown(offer.expires_at)}}</td>
+        <td>{{offer.max_price | currency}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
