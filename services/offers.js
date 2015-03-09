@@ -7,23 +7,23 @@ app.factory('Offers', function($http, $q, $rootScope) {
       $http.get(urlBase + '/user/'+ user_id + '/offers').success(function(data){
         if (data.length != offers.length){
           for (var item in data) {
-            offers.push(data[item])
+            offers.push(data[item]);
           }
         }
-      console.log(offers)
+      console.log(offers);
       }).error(function(err){
-        console.log("Offers data not found: " + err)
-      })
+        console.log("Offers data not found: " + err);
+      });
     },
     all: function() {
-      return offers
+      return offers;
     },
     add: function(listing) {
-      offers.push(listing)
+      offers.push(listing);
     },
     remove: function(listing) {
-      offers.splice(offers.indexof(listing), 1)
+      offers.splice(offers.indexof(listing), 1);
     },
 
-  }
-})
+  };
+});

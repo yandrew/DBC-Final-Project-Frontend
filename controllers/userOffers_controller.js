@@ -4,7 +4,7 @@ app.controller('UserOffersCtrl', function($scope, $interval, Offers, $stateParam
   $scope.offers = Offers.all();
   $scope.countDown = function(timeEnd) {
     return Timer.countdown(timeEnd);
-  }
+  };
 
 
-})
+});
