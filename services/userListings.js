@@ -3,7 +3,7 @@ app.factory('UserListings', function($http, $q, $rootScope) {
   var listings = [];
   return {
     update: function(user_id) {
-      $http.get(urlBase + "/user/" + 6 + "/listings").success(function(data){
+      $http.get(urlBase + "/users/" + 6 + "/listings").success(function(data){
         if (data.length != listings.length){
           for (var listing in data) {
             listings.push(data[listing]);
@@ -11,7 +11,7 @@ app.factory('UserListings', function($http, $q, $rootScope) {
         }
         
       }).error(function(err){
-        console.log("Listing data not found: " + err + data);
+        console.log("Listing data not found: " );
       });
     },
     all: function() {

@@ -1,6 +1,7 @@
 app.factory('Listing', function($http, $q, $rootScope) {
   var urlBase = 'http://localhost:3000/listings';
   var listings = [];
+  console.log('in listings service')
   return {
     update: function() {
       $http.get(urlBase).success(function(data){

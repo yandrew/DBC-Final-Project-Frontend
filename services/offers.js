@@ -6,15 +6,15 @@ app.factory('Offer', function($http, $q, $rootScope) {
   return {
     update: function(user_id) {
       // console.log(user_id)
-      $http.get(urlBase + '/user/'+ user_id + '/offers').success(function(data){
+      $http.get(urlBase + '/users/'+ user_id + '/offers').success(function(data){
         if (data.length != offers.length){
           for (var item in data) {
             offers.push(data[item]);
           }
         }
       console.log(offers);
-      }).error(function(err){
-        console.log("Offers data not found: " + err);
+      }).error(function(){
+        console.log("Offers data not found: ");
       })
     },
     all: function() {

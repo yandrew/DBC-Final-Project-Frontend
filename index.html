@@ -11,32 +11,25 @@
   <script src="libraries/angular-strap.tpl.min.js"></script>
   <script src="libraries/angular-ui-router.js"></script>
   <script src="libraries/moment.js"></script>
-  <script src="app.js"></script>
-  <script src="controllers/market_controller.js"></script>
-  <script src="controllers/search_controller.js"></script>
-  <script src="controllers/myListings_controller.js"></script>
-  <script src="controllers/userOffers_controller.js"></script>
-  <script src="services/listings.js"></script>
-  <script src="services/userListings.js"></script>
-  <script src="services/countdown_service.js"></script>
-  <script src="services/offers.js"></script>
 
-  <!-- Firebase -->
-  <script src="https://cdn.firebase.com/js/client/2.2.2/firebase.js"></script>
-  <!-- AngularFire -->
-  <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script> 
   <!-- AppFiles -->
   <script src="app.js"></script>
   <script src="services/listings.js"></script>
   <script src="services/offers.js"></script>
   <script src="services/users.js"></script>
   <script src="services/products.js"></script>
+  <script src="services/listings.js"></script>
+  <script src="services/userListings.js"></script>
+  <script src="services/countdown_service.js"></script>
+  <script src="services/offers.js"></script>
   <script src="controllers/topmenu_controller.js"></script>
   <script src="controllers/listings_controller.js"></script>
   <script src="controllers/offers_controller.js"></script>
   <script src="controllers/new_listing_controller.js"></script>
   <script src="controllers/new_user_controller.js"></script>
-
+  <script src="controllers/search_controller.js"></script>
+  <script src="controllers/myListings_controller.js"></script>
+  <script src="controllers/userOffers_controller.js"></script>
 
   <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
   <link rel="stylesheet" href="stylesheets/angular-motion.min.css">  
@@ -70,6 +63,10 @@
   </div>
 
     </div>
+  </div>
+
+  <div class="col col-sm-10 col-sm-offset-2">
+    <div ui-view="main-container"></div>  
   </div>
 
 </body>

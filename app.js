@@ -1,4 +1,4 @@
-var app = angular.module('sellMe',['firebase', 'ui.router', 'ngAnimate', 'mgcrea.ngStrap']);  
+var app = angular.module('sellMe',['ui.router', 'ngAnimate', 'mgcrea.ngStrap']);  
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/listings');
@@ -45,7 +45,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-<<<<<<< HEAD
     .state('myListings',{
       url: '/mylistings',
       views: {
@@ -53,11 +52,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
           templateUrl: 'templates/myListings.html',
           controller: 'MyListingsCtrl'
         },
-        'left-sidebar': {
-          templateUrl: 'templates/leftmenu.html'
-        },
-        'right-sidebar': {
-          templateUrl: 'templates/rightmenu.html'
+        'top-menu': {
+          templateUrl: 'templates/topmenu.html',
+          controller: 'TopMenuCtrl'
         }
       }
     })
@@ -68,16 +65,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
           templateUrl: 'templates/myOffers.html',
           controller: 'UserOffersCtrl'
         },
-        'left-sidebar': {
-          templateUrl: 'templates/leftmenu.html'
-        },
-        'right-sidebar': {
-          templateUrl: 'templates/rightmenu.html'
+        'top-menu': {
+          templateUrl: 'templates/topmenu.html',
+          controller: 'TopMenuCtrl'
         }
       }
-    });
-});
-=======
+    })
     .state('listings.newListing', {
       url: '/new_listing',
       views: {
@@ -96,5 +89,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })    
-})
->>>>>>> added forms for listing and user
+});

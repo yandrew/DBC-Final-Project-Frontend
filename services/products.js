@@ -1,5 +1,6 @@
 app.factory('Product', function($http, $q, $rootScope) {
-  var urlBase = 'data/products.json';
+  //var urlBase = 'data/products.json';
+  var urlBase = ''
   var products = [];
 
   return {
