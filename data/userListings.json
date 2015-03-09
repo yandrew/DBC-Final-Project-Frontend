@@ -106,7 +106,7 @@
   "username": "yandrew",
   "max_price": 87,
   "accept_price": 20,
-  "expires_at": "2015-03-10 14:10:08 -0800",
+  "expires_at": "2015-03-09 18:30:08 -0700",
   "offers":[
           {
             "listing_id": 4,
@@ -170,7 +170,7 @@
   "username": "yandrew",
   "max_price": 4,
   "accept_price": 20,
-  "expires_at": "2015-03-07 23:10:08 -0800",
+  "expires_at": "2015-03-09 16:26:00 -0700",
   "offers":[
           {
             "listing_id": 4,

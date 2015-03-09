@@ -1,12 +1,12 @@
 app.factory('Listings', function($http, $q, $rootScope) {
-  var urlBase = 'http://localhost:3000/listings';
+  var urlBase = 'http://localhost:3000';
   var listings = [];
   return {
     update: function() {
-      $http.get(urlBase).success(function(data){
-        if (data.listing.length != listings.length){
-          for (var i = 0; i < data.listing.length; i++) {
-            listings.push(data.listing[i]);
+      $http.get(urlBase + "/listings").success(function(data){
+        if (data.length != listings.length){
+          for (var i = 0; i < data.length; i++) {
+            listings.push(data[i]);
           }
           // for (item in data.listing) {
           //   listings.push(data.listing[item]);
