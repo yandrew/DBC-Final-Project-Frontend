@@ -1,11 +1,11 @@
 app.factory('UserListings', function($http, $q, $rootScope) {
-  var urlBase = 'data/userListings.json';
+  var urlBase = 'http://localhost:3000';
   var listings = [];
   return {
-    update: function() {
-      $http.get(urlBase).success(function(data){
+    update: function(user_id) {
+      $http.get(urlBase + "/user/" + 6 + "/listings").success(function(data){
         if (data.length != listings.length){
-          for (listing in data) {
+          for (var listing in data) {
             listings.push(data[listing]);
           }
         }

@@ -10,7 +10,8 @@
       <div class="caption">
         <h3>{{ listing.name }}</h3>
         <p>{{ listing.description }}</p>
-        <p><a href="#" class="btn btn-default" role="button">Bid: <strong>{{ listing.base_price | currency }}</strong></a></p>
+        <p>Condition: {{ listing.condition }}</p>
+        <p><a href="#" class="btn btn-default" role="button">Bid: <strong>{{ listing.max_price | currency }}</strong></a></p>
         <p><a href="#" class="btn btn-primary" role="button">Sell Now: <strong>{{ listing.accept_price | currency }}</strong></a></p>
         <p> </p>
       </div>

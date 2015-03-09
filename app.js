@@ -47,5 +47,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
           templateUrl: 'templates/rightmenu.html'
         }
       }
-    })
+    });
 });
