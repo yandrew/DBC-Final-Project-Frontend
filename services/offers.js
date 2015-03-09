@@ -38,6 +38,9 @@ app.factory('Offer', function($http, $q, $rootScope) {
     },
     getOffers: function(listingId) {
       return $http.get('http://localhost:3000/listings/' + listingId)
+    },
+    postOffer: function(listingId, params) {
+      return $http.post('http://localhost:3000/listings/' + listingId + '/offers', params)
     }
   }
 })

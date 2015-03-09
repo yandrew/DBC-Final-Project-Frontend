@@ -18,13 +18,30 @@ app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, Li
 	if (listing) $scope.newOffer.productPrice = listing.lowest_price
 
 	$scope.makeOffer = function() {
-		Offer.add($scope.newOffer)
+		//Offer.add($scope.newOffer)
+		$scope.newOffer.user_id = 1;
+		Offer.postOffer($scope.listing.listing_id, $scope.newOffer).then(function(res){
+			console.log("post made", res)
+		}, function(err) {
+			console.log("post failed", err)
+		})
 		$scope.message = "Your offer has been made"
 		$timeout(function(){
 			$scope.message = "";
 		}, 2000)
 		$scope.newOffer = {};
-		console.log(Offer.all());
 	}
 
 })
+
+
+//
+//user_id
+//listing_id
+//price
+//condition
+//name
+//description
+//image_url
+
+

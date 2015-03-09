@@ -45,6 +45,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
+<<<<<<< HEAD
     .state('myListings',{
       url: '/mylistings',
       views: {
@@ -76,3 +77,24 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     });
 });
+=======
+    .state('listings.newListing', {
+      url: '/new_listing',
+      views: {
+        'newlisting': {
+          templateUrl: 'templates/new_listing.html',
+          controller: 'NewListingCtrl'
+        }
+      }
+    })
+    .state('listings.newUser', {
+      url: '/new_user',
+      views: {
+        'newuser': {
+          templateUrl: 'templates/new_user.html',
+          controller: 'NewUserCtrl'
+        }
+      }
+    })    
+})
+>>>>>>> added forms for listing and user

@@ -29,9 +29,13 @@ app.factory('Listing', function($http, $q, $rootScope) {
         }
       })
       return listingFound;
+    },
+    postNew: function(params){
+      return $http.post('http://localhost:3000/listings/', params)
     }
   }
 })
+
 
     // "listing_id": 1,
     // "product_id": 6,

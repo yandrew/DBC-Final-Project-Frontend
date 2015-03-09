@@ -30,6 +30,9 @@ app.factory('User', function($http, $q, $rootScope) {
         }
       })
       return userFound;
-    }
+    },
+    postNew: function(params) {
+      return $http.post('http://localhost:3000/users/', params)
+    }    
   }
 })
