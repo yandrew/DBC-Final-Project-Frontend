@@ -32,7 +32,12 @@ app.factory('User', function($http, $q, $rootScope) {
       return userFound;
     },
     postNew: function(params) {
+<<<<<<< HEAD
       return $http.post('http://localhost:3000/users/', params)
     }
+=======
+      return $http.post('http://192.168.1.135:3000/users/', params)
+    }    
+>>>>>>> corrects problem of not being able to display the offers on a listing page
   }
 })

@@ -1,6 +1,6 @@
 app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, Listing, Offer, listing){
 
-	$scope.listing = listing
+	$scope.listing = listing;
 
 	$timeout(function(){
 		if (!$scope.listing)
@@ -8,9 +8,8 @@ app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, Li
 			$scope.newOffer.productPrice = $scope.listing.lowest_price;
 	}, 1000)
 
-	console.log($stateParams.listingId)
 	Offer.getOffers($stateParams.listingId).then(function(res){
-		$scope.offers = res.data[0].offers;
+		$scope.offers = res.data.offers;
 		console.log('offers', $scope.offers)
 	})
 

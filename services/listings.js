@@ -1,5 +1,5 @@
 app.factory('Listing', function($http, $q, $rootScope) {
-  var urlBase = 'http://localhost:3000/listings';
+  var urlBase = 'http://192.168.1.135:3000/listings';
   var listings = [];
   console.log('in listings service')
   return {
@@ -32,7 +32,7 @@ app.factory('Listing', function($http, $q, $rootScope) {
       return listingFound;
     },
     postNew: function(params){
-      return $http.post('http://localhost:3000/listings/', params)
+      return $http.post('http://192.168.1.135:3000/listings/', params)
     }
   }
 })
