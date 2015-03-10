@@ -6,7 +6,6 @@ app.controller('NewListingCtrl', function($scope, Listing, CategoryService) {
 	
 	$scope.newListing = {};
 	$scope.currentDate = new Date();
-	console.log($scope.categories);
 	$scope.makeListing = function() {
 		$scope.newListing.user_id = 2;
 		$scope.newListing.category_id = $scope.newListing.category_id['id']
@@ -18,5 +17,6 @@ app.controller('NewListingCtrl', function($scope, Listing, CategoryService) {
 		});
 		$scope.newListing = {};
 	}
+
 
 })
