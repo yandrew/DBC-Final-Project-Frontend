@@ -1,4 +1,5 @@
 <div class="col col-sm-10">
+
 <h3 class="lead text-center">Product Details </h3>
 <hr>
 <div class="col col-sm-6">
@@ -19,116 +20,96 @@
 
 
 <div class="col col-sm-10">
-<h3 class="lead text-center">Ongoing offers</h3>
-<hr>
-  <div class="col col-sm-4" ng-repeat="offer in offers">
-    <div class="thumbnail text-center" >
-      <img class="listing-image img-responsive" ng-src="{{ listing.image_url }}">
-      <div class="caption">
-        <h3>{{ offer.name }}</h3>
-        <p>{{ offer.description }}</p>
-        <p><p>Bid: <strong>{{ offer.offer_price | currency }}</strong></p></p>
-        <p> </p>
+
+  <h3 class="lead text-center">Ongoing offers</h3>
+  <hr>
+    <div class="col col-sm-4" ng-repeat="offer in offers">
+      <div class="thumbnail text-center" >
+        <img class="listing-image img-responsive" ng-src="{{ listing.image_url }}">
+        <div class="caption">
+          <h3>{{ offer.name }}</h3>
+          <p>{{ offer.description }}</p>
+          <p><p>Bid: <strong>{{ offer.offer_price | currency }}</strong></p></p>
+          <p> </p>
+        </div>
       </div>
     </div>
-  </div>
 
 
-<div class="alert alert-success" role="alert" ng-if="message">
-  Your offer has been made
-</div>
-<h3 class="lead text-center">Make an offer</h3>
-<hr>
-<form class="form-horizontal" ng-submit="makeOffer()">
-  <div class="form-group">
-    <label for="productName" class="col-sm-2 control-label">Name</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="productName" placeholder="How would you name your product?" ng-model="newOffer.name">
+  <div class="make-offer">
+    <hr>
+    <h3 class="lead text-center">Make an offer</h3>
+    <div class="alert alert-success" role="alert" ng-if="message">
+      Your offer has been made
     </div>
+    <hr>
   </div>
-  <div class="form-group">
-    <label for="productDescription" class="col-sm-2 control-label">Description</label>
-    <div class="col-sm-10">
-		<textarea class="form-control" rows="3" id="productDescription" placeholder="Write nice things about it! Your goal is to sell it" ng-model="newOffer.description"></textarea>
+  <form class="form-horizontal" ng-submit="makeOffer()">
+    <div class="form-group">
+      <label for="productName" class="col-sm-2 control-label">Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="productName" placeholder="How would you name your product?" ng-model="newOffer.name">
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="productCondition" class="col-sm-2 control-label">Condition</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="productCondition" placeholder="In which condition is the product being offered?" ng-model="newOffer.condition">
+    <div class="form-group">
+      <label for="productDescription" class="col-sm-2 control-label">Description</label>
+      <div class="col-sm-10">
+  		<textarea class="form-control" rows="3" id="productDescription" placeholder="Write nice things about it! Your goal is to sell it" ng-model="newOffer.description"></textarea>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="productUrl" class="col-sm-2 control-label">Image</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="productUrl" placeholder="Copy a link to your product image" ng-model="newOffer.image_url">
-    </div>
-  </div>
-	  <div class="form-group">
+    
+    <div class="form-group">
+      <label for="productCondition" class="col-sm-2 control-label">Condition</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="productCondition" placeholder="In which condition is the product being offered?" ng-model="newOffer.condition">
+      </div>
+    </div><!-- .form-group -->
+
+    <div class="form-group">
+      <label for="productUrl" class="col-sm-2 control-label">Image</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="productUrl" placeholder="Copy a link to your product image" ng-model="newOffer.image_url">
+      </div>
+    </div><!-- .form-group -->
+	  
+    <div class="form-group">
 	    <label for="productPrice" class="col-sm-2 control-label">Price</label>
-	    <div class="col-sm-10">
-      <div class="input-group">
-        <div class="input-group-addon">$</div>
-	      <input type="number" step="0.01" class="form-control" id="productPrice" placeholder="Place your offer" ng-model="newOffer.price">
-	    </div>
+	    
+      <div class="col-sm-4">
+        <div class="input-group">
+          <div class="input-group-addon">$</div>
+  	      <input type="number" step="1.00" class="form-control" id="productPrice" placeholder="Place your offer" ng-model="newOffer.price">
+  	    </div>
       </div>
       <hr>
-    <div class="col-sm-2 col-sm-offset-2">
-				<label>Current:</label>
-<<<<<<< HEAD
-<<<<<<< HEAD
-	    </div>
-	   <div class="col-sm-1">
-				{{ listing.max_price | currency }}
-	    </div>
-	   <div class="col-sm-2">
-				<label>Max:</label>
-	    </div>
-	   <div class="col-sm-1">
-				{{ listing.max_price | currency }}
-	    </div>
-     <div class="col-sm-2">
-        <label>Quick sell:</label>
-      </div>
-     <div class="col-sm-1">
-=======
-	    </div>	    
-    <div class="col-sm-1">
-				{{ listing.max_price | currency }}
-	    </div>	    
-    <div class="col-sm-2">
-				<label>Max:</label>
-	    </div>	    
-    <div class="col-sm-1">
-				{{ listing.max_price | currency }}
-	    </div>	    
-    <div class="col-sm-2">
-        <label>Quick sell:</label>
-      </div>      
-    <div class="col-sm-1">
->>>>>>> corrects problem of not being able to display the offers on a listing page
-        {{ listing.accept_price | currency }}
-      </div>
-	  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-4">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"> Follow this auction
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-primary">Offer</button>
-    </div>
-  </div>
-</form>
 
-</div>
-
-
+      <div class="col-sm-2 col-sm-offset-2">
+  			<label>Current:</label>
+      </div>	    
+      <div class="col-sm-1">{{ listing.max_price | currency }}</div>	    
+      <div class="col-sm-2"><label>Max:</label></div>	    
+      <div class="col-sm-1">{{ listing.max_price | currency }}</div>	    
+      <div class="col-sm-2"><label>Quick sell:</label></div>      
+      <div class="col-sm-1">{{ listing.accept_price | currency }}</div>      
+	  </div><!-- .form-group -->
+    
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-4">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Follow this auction
+          </label>
+        </div>
+      </div>
+    </div><!-- .form-group -->
+    
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary">Offer</button>
+      </div>
+    </div><!-- .form-group -->
+  
+  </form>
 
 </div>
 

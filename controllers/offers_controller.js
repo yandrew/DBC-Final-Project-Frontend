@@ -1,7 +1,7 @@
 app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, Listing, Offer, listing){
 
 	$scope.listing = listing;
-
+	$scope.currentDate = new Date();
 	$timeout(function(){
 		if (!$scope.listing)
 			$scope.listing = Listing.findById($stateParams.listingId);

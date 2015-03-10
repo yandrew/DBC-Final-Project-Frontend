@@ -1,11 +1,10 @@
 app.factory('Listing', function($http, $q, $rootScope) {
   var urlBase = 'http://192.168.1.135:3000/listings';
   var listings = [];
-  console.log('in listings service')
   return {
     update: function() {
       $http.get(urlBase).success(function(data){
-        for (item in data) {
+        for (var item in data) {
           listings.push(data[item])
         }
       }).error(function(err){
