@@ -1,4 +1,4 @@
-var app = angular.module('sellMe',['ui.router', 'ngAnimate', 'mgcrea.ngStrap']);
+var app = angular.module('sellMe',['ui.router', 'ngAnimate', 'mgcrea.ngStrap', 'angularModalService']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/listings');
@@ -15,8 +15,22 @@ app.config(function($stateProvider, $urlRouterProvider) {
       },
       'right-sidebar': {
         templateUrl: 'templates/rightmenu.html'
+        }
       }
     })
+      .state('login', {
+      url: '/login',
+      views: {
+        'main-container': {
+          templateUrl: 'templates/login.html',
+          controller: 'TopMenuCtrl'
+        },
+        'top-menu': {
+          templateUrl: 'templates/topmenu.html',
+          controller: 'TopMenuCtrl'
+        }
+       }
+      })
     .state('listings',{
       url: '/listings',
       views: {
@@ -60,7 +74,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
       'right-sidebar': {
         templateUrl: 'templates/rightmenu.html'
       }
-    })
+    }
+  })
     .state('myListings',{
       url: '/mylistings',
       views: {
