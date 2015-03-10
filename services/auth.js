@@ -25,7 +25,8 @@ app.service('Auth', function($cookieStore, $http, $state, $rootScope) {
 	}
 
 	this.authorize = function() {
-		console.log ('cookie', $cookieStore.get('userid')) 
+		console.log ('cookie', $cookieStore.get('userid'))
+		if (!$cookieStore.get('userid')) $scope.transitionTo('main.login')
 		return $cookieStore.get('userid')
 	}
 

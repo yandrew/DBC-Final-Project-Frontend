@@ -87,7 +87,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
       views: {
         'newlisting': {
           templateUrl: 'templates/new_listing.html',
-          controller: 'NewListingCtrl'
+          controller: 'NewListingCtrl',
+          resolve: {
+            'loggedUser': function(Auth){
+              return Auth.authorize();
+            }
+          }
         }
       }
     })
