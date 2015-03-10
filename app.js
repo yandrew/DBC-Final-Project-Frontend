@@ -1,4 +1,4 @@
-var app = angular.module('sellMe',['ui.router', 'ngAnimate', 'mgcrea.ngStrap', 'ngCookies']);  
+var app = angular.module('sellMe',['ui.router', 'ngAnimate', 'mgcrea.ngStrap', 'ngCookies']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/main/listings');
@@ -39,7 +39,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
            listing: function($stateParams, Listing){
              return Listing.findById($stateParams.listingId)
            }
-          } 
+          }
         }
       }
     })
@@ -51,9 +51,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
           controller: 'MyListingsCtrl'
         }
       },
-      onEnter: function(Auth, Listing, User) {
+      onEnter: function(Listing) {
         Listing.update();
-        User.update();
       }
     })
     .state('main.listing', {
@@ -127,5 +126,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
         controller: 'LoginCtrl'
       }
      }
-    })        
+    })
 });

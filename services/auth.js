@@ -1,6 +1,6 @@
 app.service('Auth', function($cookieStore, $http, $state, $rootScope) {
 
-  var urlBase = 'http://192.168.1.135:3000';
+  var urlBase = 'http://192.168.1.69:3000';
 
   this.userInfo = {};
   var self = this;
@@ -11,7 +11,7 @@ app.service('Auth', function($cookieStore, $http, $state, $rootScope) {
 			$rootScope.$broadcast('userloggedinevent');
 			$state.transitionTo('main.profile');
 		}).error(function(data){
-			console.log('unable to login')			
+			console.log('unable to login')
 			$cookieStore.remove('userid')
 		})
 	}
@@ -26,7 +26,8 @@ app.service('Auth', function($cookieStore, $http, $state, $rootScope) {
 
 	this.authorize = function() {
 		console.log ('cookie', $cookieStore.get('userid'))
-		if (!$cookieStore.get('userid')) $scope.transitionTo('main.login')
+		this.userInfo['loggedUser'] = $cookieStore.get('userid')
+		// if (!$cookieStore.get('userid')) $scope.transitionTo('main.login')
 		return $cookieStore.get('userid')
 	}
 

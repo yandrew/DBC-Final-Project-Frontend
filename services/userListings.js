@@ -1,15 +1,15 @@
 app.factory('UserListings', function($http, $q, $rootScope) {
-  var urlBase = 'http://192.168.1.135:3000';
+  var urlBase = 'http://192.168.1.69:3000';
   var listings = [];
   return {
     update: function(user_id) {
-      $http.get(urlBase + "/users/" + 6 + "/listings").success(function(data){
+      $http.get(urlBase + "/users/" + user_id + "/listings").success(function(data){
         if (data.length != listings.length){
           for (var listing in data) {
             listings.push(data[listing]);
           }
         }
-        
+
       }).error(function(err){
         console.log("Listing data not found: " );
       });

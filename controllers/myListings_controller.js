@@ -1,4 +1,7 @@
-app.controller('MyListingsCtrl',function($scope, $interval, UserListings, Timer) {
+app.controller('MyListingsCtrl',function($scope, $interval, UserListings, Timer, User, Auth) {
+
+  User.update(Auth.userInfo)
+
 	$scope.orderByField = 'expires_at';
   $scope.reverseSort = false;
 
@@ -11,15 +14,15 @@ app.controller('MyListingsCtrl',function($scope, $interval, UserListings, Timer)
   $scope.countDown = function(timeEnd) {
     return Timer.countdown(timeEnd);
   }
-  
+
   $scope.countdown = function(datetime) {
   	var ending = new Date(datetime).getTime();
   	var timeNow = new Date().getTime();
     // format for converting a time
     // var newEnding = moment(ending).format('MMMM Do YYYY, h:mm:ss a')
-    
+
     var differ = ending - timeNow;
-  	
+
   	if (differ < 0){
   		return "expired!";
   	}
@@ -36,7 +39,7 @@ app.controller('MyListingsCtrl',function($scope, $interval, UserListings, Timer)
 		var _day = _hour * 24;
 
 
-   	
+
    	// var hours =  moment(differ).hours();
    	// var minutes = moment(differ).minutes();
    	// var seconds = moment(differ).seconds();
@@ -45,7 +48,7 @@ app.controller('MyListingsCtrl',function($scope, $interval, UserListings, Timer)
 		var hours = Math.floor((differ % _day) /_hour);
 		var minutes = Math.floor((differ % _hour)/ _minute);
 		var seconds = Math.floor((differ % _minute)/(_second));
-   	
+
    	// return days + " days " + ;
    	if (days > 1){
       return days + " days ";
@@ -63,11 +66,11 @@ app.controller('MyListingsCtrl',function($scope, $interval, UserListings, Timer)
   // 	if (ending > new Date()){
 		// 	var display = moment(ending).fromNow();
 		// 	return display;
-		
+
 		// } else {
 		// 		return "Ended!";
   // 	}
-  
+
   };
 
 
@@ -81,7 +84,7 @@ app.controller('MyListingsCtrl',function($scope, $interval, UserListings, Timer)
 
 
   // 		var timeRemaining = end - now;
-  		
+
 		// 	var days = Math.floor(distance / _day);
 		// 	var hours = Math.floor((distance % _day) / _hour);
 		// 	var minutes = Math.floor((distance % _hour) / _minute);
