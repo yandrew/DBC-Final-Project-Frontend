@@ -5,12 +5,14 @@
   <title>Sell Me</title>
   <!-- Angular + Bootstrap-->
   <script src="libraries/angular.js"></script>
+  <script src="libraries/angularModalService.js"></script>
   <script src="libraries/angular-ui-router.js"></script>
-  <script src="libraries/angular-animate.min.js"></script>  
+  <script src="libraries/angular-animate.min.js"></script>
   <script src="libraries/angular-strap.min.js"></script>
   <script src="libraries/angular-strap.tpl.min.js"></script>
   <script src="libraries/angular-ui-router.js"></script>
   <script src="libraries/moment.js"></script>
+
 
   <!-- AppFiles -->
   <script src="app.js"></script>
@@ -30,17 +32,25 @@
   <script src="controllers/search_controller.js"></script>
   <script src="controllers/myListings_controller.js"></script>
   <script src="controllers/userOffers_controller.js"></script>
+    <script src="controllers/modal_controller.js"></script>
+
 
   <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
-  <link rel="stylesheet" href="stylesheets/angular-motion.min.css">  
+  <link rel="stylesheet" href="stylesheets/angular-motion.min.css">
   <link rel="stylesheet" href="stylesheets/application.css">
 </head>
 <body>
+  <div class="login-header">
+  <ul class="ul-login">
+      <li class="btn btn-primary login-btn"><a href="#/login">Log In</a></li>
+      <li class="btn btn-primary login-btn"><a href="#">Sign Up</a></li>
+  </ul>
+  </div>
 
   <div class="page-header text-center main-page-title">
     <h1>SellMe.io</h1>
   </div>
-
+  <!-- <a class="btn btn-default" href ng-click="show()"> -->
 
   <div class="container">
 
@@ -66,7 +76,7 @@
   </div>
 
   <div class="col col-sm-10 col-sm-offset-2">
-    <div ui-view="main-container"></div>  
+    <div ui-view="main-container"></div>
   </div>
 
 </body>

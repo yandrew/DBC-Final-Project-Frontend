@@ -33,6 +33,6 @@ app.factory('User', function($http, $q, $rootScope) {
     },
     postNew: function(params) {
       return $http.post('http://localhost:3000/users/', params)
-    }    
+    }
   }
 })

@@ -1,4 +1,4 @@
-app.controller('ListingsCtrl', function($scope, $interval, $modal, Listing, User, Product, Offer) {
+app.controller('ListingsCtrl', function($scope, $interval, ModalService, Listing, User, Product, Offer, $modal, $log) {
 
 	console.log('in listings controller')
   $scope.datetime = 1425695731013;
@@ -8,9 +8,26 @@ app.controller('ListingsCtrl', function($scope, $interval, $modal, Listing, User
 
   $scope.listings = Listing.all();
 
-  Listing.update();
-  User.update();
-  Product.update();
-  Offer.update();
+  //Open modal window to log in
+  // $scope.open = function (size)
+  this.modalUpdate = function(){
 
-})
+    var modalInstance = $modal.open({
+      templateUrl: 'myModalContent.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+});

@@ -1,23 +1,36 @@
-var app = angular.module('sellMe',['ui.router', 'ngAnimate', 'mgcrea.ngStrap']);  
+var app = angular.module('sellMe',['ui.router', 'ngAnimate', 'mgcrea.ngStrap', 'angularModalService']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/listings');
   $stateProvider
-    .state('marketPlace',{
-      url: '/marketPlace',
-      views: {
-        'main-container': {
-          templateUrl: 'templates/marketPlace.html',
-          controller: 'SearchCtrl'
-        },
-        'left-sidebar': {
-          templateUrl: 'templates/leftmenu.html'
-        },
-        'right-sidebar': {
-          templateUrl: 'templates/rightmenu.html'
+  .state('marketPlace',{
+    url: '/marketPlace',
+    views: {
+      'main-container': {
+        templateUrl: 'templates/marketPlace.html',
+        controller: 'SearchCtrl'
+      },
+      'left-sidebar': {
+        templateUrl: 'templates/leftmenu.html'
+      },
+      'right-sidebar': {
+        templateUrl: 'templates/rightmenu.html'
         }
       }
     })
+      .state('login', {
+      url: '/login',
+      views: {
+        'main-container': {
+          templateUrl: 'templates/login.html',
+          controller: 'TopMenuCtrl'
+        },
+        'top-menu': {
+          templateUrl: 'templates/topmenu.html',
+          controller: 'TopMenuCtrl'
+        }
+       }
+      })
     .state('listings',{
       url: '/listings',
       views: {
@@ -41,10 +54,28 @@ app.config(function($stateProvider, $urlRouterProvider) {
            listing: function($stateParams, Listing){
              return Listing.findById($stateParams.listingId)
            }
-          } 
+          }
         }
+    }
+  })
+  .state('userProfile',{
+    url: '/userProfile',
+    data: {
+        requireLogin: true // KTT: playing around with this method
+      },
+    views: {
+      'main-container': {
+        templateUrl: 'templates/userProfile.html',
+        controller: 'UserProfileCtrl'
+      },
+      'left-sidebar': {
+        templateUrl: 'templates/leftmenu.html'
+      },
+      'right-sidebar': {
+        templateUrl: 'templates/rightmenu.html'
       }
-    })
+    }
+  })
     .state('myListings',{
       url: '/mylistings',
       views: {
@@ -88,5 +119,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
           controller: 'NewUserCtrl'
         }
       }
-    })    
+    })
 });

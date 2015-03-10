@@ -5,17 +5,19 @@
   <img  class="listing-image" ng-src="{{ listing.image_url }}">
 </div>
 <div class="col col-sm-4">
-  <p>{{ listing.name }}</p>    
-  <p>{{ listing.username }}</p>    
-  <p>{{ listing.category }}</p>    
-  <p>{{ listing.description }}</p>  
-  <p>{{ listing.condition }}</p>  
-  <p>{{ listing.max_price | currency }}</p>  
+  <p>{{ listing.name }}</p>
+  <p>{{ listing.username }}</p>
+  <p>{{ listing.category }}</p>
+  <p>{{ listing.description }}</p>
+  <p>{{ listing.condition }}</p>
+  <p>{{ listing.max_price | currency }}</p>
 
 </div>
 </div>
 
 <br>
+
+
 <div class="col col-sm-10">
 <h3 class="lead text-center">Ongoing offers</h3>
 <hr>
@@ -73,22 +75,23 @@
       <hr>
 	   <div class="col-sm-2 col-sm-offset-2">
 				<label>Current:</label>
-	    </div>	    
+<<<<<<< HEAD
+	    </div>
 	   <div class="col-sm-1">
 				{{ listing.max_price | currency }}
-	    </div>	    
+	    </div>
 	   <div class="col-sm-2">
 				<label>Max:</label>
-	    </div>	    
+	    </div>
 	   <div class="col-sm-1">
 				{{ listing.max_price | currency }}
-	    </div>	    
+	    </div>
      <div class="col-sm-2">
         <label>Quick sell:</label>
-      </div>      
+      </div>
      <div class="col-sm-1">
         {{ listing.accept_price | currency }}
-      </div>      
+      </div>
 	  </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-4">
