@@ -1,14 +1,14 @@
 
   <div class="col-sm-6 col-sm-offset-2 login-form">
 
-    <form role="form" ng-submit="login()">
+    <form role="form" ng-submit="login()" novalidate>
       <div class="form-group">
-        <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="email"/>
+        <label for="email">Username or Email</label>
+        <input type="text" class="form-control" id="email" placeholder="Enter email" ng-model="userlogin.username"/>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Password" ng-model="password" />
+        <input type="password" class="form-control" id="password" placeholder="Password" ng-model="userlogin.password"/>
       </div>
       <button type="submit" class="btn btn-primary login-btn">Submit</button>
     </form>

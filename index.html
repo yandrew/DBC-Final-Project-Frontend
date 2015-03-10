@@ -35,6 +35,7 @@
   <script src="controllers/myOffers_controller.js"></script>
   <script src="controllers/listing_controller.js"></script>
   <script src="controllers/profile_controller.js"></script>
+  <script src="controllers/login_controller.js"></script>
 
 
   <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
@@ -42,24 +43,17 @@
   <link rel="stylesheet" href="stylesheets/application.css">
 </head>
 <body>
-<div class="login-header">
-  <ul class="ul-login">
-      <li class="btn btn-primary login-btn"><a href="#/login">Log In</a></li>
-      <li class="btn btn-primary login-btn"><a href="#">Sign Up</a></li>
-  </ul>
-  </div>
 
   <div class="page-header text-center main-page-title">
     <h1>SellMe.io</h1>
   </div>
 
-
   <div class="container">
 
   <div class="menu-main-page row">
-    <div class="col-sm-6 col-sm-offset-3">
+    <div class="col-sm-8 col-sm-offset-2">
       <div ui-view="top-menu"></div>
-    <div class="col col-sm-3"></div>
+    <div class="col col-sm-2"></div>
   </div>
 
   <div class="search-container row">

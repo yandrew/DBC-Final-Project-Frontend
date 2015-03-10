@@ -1,4 +1,4 @@
-app.service('Auth', function($cookieStore, $http, $state) {
+app.service('Auth', function($cookieStore, $http, $state, $rootScope) {
 
   var urlBase = 'http://192.168.1.135:3000';
 
@@ -7,7 +7,9 @@ app.service('Auth', function($cookieStore, $http, $state) {
 
 	this.authenticate = function(params) {
 		$http.post( urlBase + '/users/login', params).success(function(data){
-			$cookieStore.put('userid', data.id)
+			$cookieStore.put('userid', data.id);
+			$rootScope.$broadcast('userloggedinevent');
+			$state.transitionTo('main.profile');
 		}).error(function(data){
 			console.log('unable to login')			
 			$cookieStore.remove('userid')
@@ -15,10 +17,11 @@ app.service('Auth', function($cookieStore, $http, $state) {
 	}
 
 	this.logout = function() {
+		$rootScope.$broadcast('userloggedoutevent');
 		$state.transitionTo('main.listings')
 		$cookieStore.remove('userid');
 		delete self.userInfo.userId;
-		console.log('loggedOut')
+		console.log('loggedOut in Auth service')
 	}
 
 	this.authorize = function() {

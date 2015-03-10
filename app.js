@@ -11,7 +11,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
           templateUrl: 'templates/maincontainer.html'
         },
         'top-menu': {
-          templateUrl: 'templates/topmenu.html'
+          templateUrl: 'templates/topmenu.html',
+          controller: 'TopMenuCtrl'
         }
       },
        onEnter: function(Listing, User) {
