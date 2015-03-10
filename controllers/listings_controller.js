@@ -1,4 +1,4 @@
-app.controller('ListingsCtrl', function($scope, $interval, ModalService, Listing, User, Product, Offer, $modal, $log) {
+app.controller('ListingsCtrl', function($scope, $interval, Listing, User, Product, Offer) {
 
   // $scope.datetime = 1425695731013;
   // $interval(function(){
@@ -6,6 +6,12 @@ app.controller('ListingsCtrl', function($scope, $interval, ModalService, Listing
   // }, 1000)
 
   $scope.listings = Listing.all();
+
+
+  Listing.update();
+  User.update();
+  Product.update();
+  Offer.update();
 
 
 });

@@ -1,4 +1,4 @@
-var app = angular.module('sellMe',['ui.router', 'ngAnimate', 'mgcrea.ngStrap', 'angularModalService']);
+var app = angular.module('sellMe',['ui.router', 'ngAnimate', 'mgcrea.ngStrap']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/listings');
