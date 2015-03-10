@@ -23,7 +23,7 @@
     </thead>
     <tbody>
       <tr ng-repeat="listing in listings|orderBy:orderByField:reverseSort">
-        <td><a ui-sref="myListings.listing({listingId: listing.listing_id})">{{listing.name}}</a></td>
+        <td><a ui-sref="^.listing({listingId: listing.listing_id})">{{listing.name}}</a></td>
         <td>{{countDown(listing.expires_at)}}</td>
         <td>{{listing.max_price | currency}}</td>
       </tr>
@@ -32,3 +32,5 @@
 </section>
 </div>
 
+<!-- listing({listingId: listing.listing_id})
+ -->

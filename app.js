@@ -1,33 +1,17 @@
 var app = angular.module('sellMe',['ui.router', 'ngAnimate', 'mgcrea.ngStrap', 'ngCookies']);  
 
 app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/listings');
+  $urlRouterProvider.otherwise('/main/listings');
   $stateProvider
-    .state('marketPlace',{
-      url: '/marketPlace',
+    .state('main',{
+      url: '/main',
+      abstract: true,
       views: {
         'main-container': {
-          templateUrl: 'templates/marketPlace.html',
-          controller: 'SearchCtrl'
-        },
-        'left-sidebar': {
-          templateUrl: 'templates/leftmenu.html'
-        },
-        'right-sidebar': {
-          templateUrl: 'templates/rightmenu.html'
-        }
-      }
-    })
-    .state('listings',{
-      url: '/listings',
-      views: {
-        'main-container': {
-          templateUrl: 'templates/listings.html',
-          controller: 'ListingsCtrl'
+          templateUrl: 'templates/maincontainer.html'
         },
         'top-menu': {
-          templateUrl: 'templates/topmenu.html',
-          controller: 'TopMenuCtrl'
+          templateUrl: 'templates/topmenu.html'
         }
       },
        onEnter: function(Listing, User) {
@@ -35,7 +19,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
         User.update();
        }
     })
-    .state('listings.offers', {
+    .state('main.listings', {
+      url: '/listings',
+      views: {
+        'listings': {
+          templateUrl: 'templates/listings.html',
+          controller: 'ListingsCtrl'
+        }
+      }
+    })
+    .state('main.offers', {
       url: '/offers/{listingId:int}',
       views: {
         'offers': {
@@ -49,24 +42,20 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('listings.mylistings',{
+    .state('main.mylistings',{
       url: '/mylistings',
       views: {
-        'main-container': {
+        'mylistings': {
           templateUrl: 'templates/myListings.html',
           controller: 'MyListingsCtrl'
-        },
-        'top-menu': {
-          templateUrl: 'templates/topmenu.html',
-          controller: 'TopMenuCtrl'
         }
       },
-       onEnter: function(Auth, Listing, User) {
+      onEnter: function(Auth, Listing, User) {
         Listing.update();
         User.update();
-       }
+      }
     })
-    .state('myListings.listing', {
+    .state('main.listing', {
       url: '/{listingId:int}',
       views: {
         'listing-details': {
@@ -83,20 +72,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('userOffers',{
-      url: '/user/:user_id/offers',
+    .state('main.myoffers',{
+      url: '/myoffers',
       views: {
-        'main-container': {
+        'myoffers': {
           templateUrl: 'templates/myOffers.html',
-          controller: 'UserOffersCtrl'
-        },
-        'top-menu': {
-          templateUrl: 'templates/topmenu.html',
-          controller: 'TopMenuCtrl'
+          controller: 'MyOffersCtrl'
         }
       }
     })
-    .state('listings.newListing', {
+    .state('main.newListing', {
       url: '/new_listing',
       views: {
         'newlisting': {
@@ -105,7 +90,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('listings.newUser', {
+    .state('main.newUser', {
       url: '/new_user',
       views: {
         'newuser': {
@@ -114,7 +99,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('listings.profile', {
+    .state('main.profile', {
       url: '/profile',
       views: {
         'profile': {

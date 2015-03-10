@@ -1,5 +1,5 @@
 
-app.controller('UserOffersCtrl', function($scope, $interval, Offer, $stateParams, Timer) {
+app.controller('MyOffersCtrl', function($scope, $interval, Offer, $stateParams, Timer) {
 
   Offer.update($stateParams.user_id);
   $scope.offers = Offer.all();

@@ -1,0 +1,24 @@
+
+<!-- <h1>{{ datetime | date:'mediumTime' }}</h1>
+ -->
+
+<!-- <p ng-if="userInfo.userId"> User logged</p>
+<p ng-if="!userInfo.userId"> Log in</p>
+ -->
+
+<div ui-view="listings">
+  <div ui-view="listing-details">
+    <div ui-view="myoffers">
+      <div ui-view="mylistings">
+        <div ui-view="profile">
+          <div ui-view="newuser">
+            <div ui-view="newlisting">
+              <div ui-view="offers">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

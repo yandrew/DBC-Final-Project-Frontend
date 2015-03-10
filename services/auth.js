@@ -15,7 +15,7 @@ app.service('Auth', function($cookieStore, $http, $state) {
 	}
 
 	this.logout = function() {
-		$state.transitionTo('listings')
+		$state.transitionTo('main.listings')
 		$cookieStore.remove('userid');
 		delete self.userInfo.userId;
 		console.log('loggedOut')
