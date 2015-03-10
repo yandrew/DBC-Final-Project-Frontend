@@ -1,4 +1,4 @@
-app.controller('TopMenuCtrl', function($scope, $rootScope, Auth){
+app.controller('TopMenuCtrl', function($scope, $rootScope,  Auth){
 
   // 'userLogged': function(Auth){
   //   return Auth.authorize();

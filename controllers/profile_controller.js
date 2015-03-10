@@ -1,4 +1,4 @@
-app.controller('ProfileCtrl', function($scope, loggedUser, Auth, User){
+app.controller('ProfileCtrl', function($scope,  loggedUser, Auth, User){
 
 	console.log('loggedUser', loggedUser)
 	User.getById(loggedUser).then(function(res){

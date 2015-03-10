@@ -7,18 +7,18 @@ app.controller('ListingsCtrl', function($scope, $interval, $modal, Listing, User
   // });
 
 	console.log('in listings controller')
-  $scope.datetime = 1425695731013;
-  $interval(function(){
-    $scope.datetime = $scope.datetime - 1000
-  }, 1000)
+  // $scope.datetime = 1425695731013;
+  // $interval(function(){
+  //   $scope.datetime = $scope.datetime - 1000
+  // }, 1000)
 
   $scope.listings = Listing.all();
 
   $scope.userInfo = Auth.userInfo
 
   Listing.update();
-  User.update();
-  Product.update();
-  Offer.update();
+  // User.update();
+  // Product.update();
+  // Offer.update();
 
 })

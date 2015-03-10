@@ -1,5 +1,5 @@
-app.factory('UserListings', function($http, $q, $rootScope) {
-  var urlBase = 'http://192.168.1.135:3000';
+app.factory('UserListings', function($http, apiService, $q, $rootScope) {
+  var urlBase = apiService.urlBase;
   var listings = [];
   return {
     update: function(user_id) {

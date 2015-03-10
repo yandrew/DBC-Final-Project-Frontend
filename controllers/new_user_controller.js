@@ -1,4 +1,4 @@
-app.controller('NewUserCtrl', function($scope, User) {
+app.controller('NewUserCtrl', function($scope,  User) {
 
 	$scope.newUser = {};
 

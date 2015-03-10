@@ -1,4 +1,4 @@
-app.controller('SearchCtrl', function($scope, $interval, Listings) {
+app.controller('SearchCtrl', function($scope,  $interval, Listings) {
 
   $scope.datetime = 1425695731013;
   $interval(function(){

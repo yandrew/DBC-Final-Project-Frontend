@@ -1,5 +1,5 @@
-app.factory('User', function($http, $q, $rootScope) {
-  var urlBase = 'http://192.168.1.135:3000';
+app.factory('User', function($http, apiService, $q, $rootScope) {
+  var urlBase = apiService.urlBase;
   var users = [];
 
   return {
@@ -35,7 +35,7 @@ app.factory('User', function($http, $q, $rootScope) {
       return $http.get(urlBase + '/users/' +  userId)
     },
     postNew: function(params) {
-      return $http.post('http://192.168.1.135:3000/users/', params)
+      return $http.post(urlBase + '/users/', params)
     }    
   }
 })

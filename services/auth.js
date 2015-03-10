@@ -1,6 +1,6 @@
-app.service('Auth', function($cookieStore, $http, $state, $rootScope) {
+app.service('Auth', function(apiService, $cookieStore, $http, $state, $rootScope) {
 
-  var urlBase = 'http://192.168.1.135:3000';
+  var urlBase = apiService.urlBase;
 
   this.userInfo = {};
   var self = this;
@@ -26,7 +26,7 @@ app.service('Auth', function($cookieStore, $http, $state, $rootScope) {
 
 	this.authorize = function() {
 		console.log ('cookie', $cookieStore.get('userid'))
-		if (!$cookieStore.get('userid')) $scope.transitionTo('main.login')
+		if (!$cookieStore.get('userid')) $rootScope.transitionTo('main.login')
 		return $cookieStore.get('userid')
 	}
 

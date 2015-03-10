@@ -1,4 +1,4 @@
-app.controller('NewListingCtrl', function($scope, $timeout, Listing, CategoryService, loggedUser) {
+app.controller('NewListingCtrl', function($scope,  $timeout, Listing, CategoryService, loggedUser) {
 
 	$scope.loggedUser = loggedUser;
 	console.log('logged user in new listing ctrl', $scope.loggedUser)
@@ -12,7 +12,7 @@ app.controller('NewListingCtrl', function($scope, $timeout, Listing, CategorySer
 	$scope.makeListing = function() {
 		$scope.newListing.user_id = $scope.loggedUser;
 		$scope.newListing.category_id = $scope.newListing.category_id['id']
-		console.log($scope.newListing)
+		console.log('new listing: ',$scope.newListing)
 		Listing.postNew($scope.newListing)
 		// .then(function(res){
 		// 	console.log("post made", res)

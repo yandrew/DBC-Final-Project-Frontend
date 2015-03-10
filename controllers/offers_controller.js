@@ -1,4 +1,4 @@
-app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, Listing, Offer, listing){
+app.controller('OffersCtrl', function($scope,  $timeout, $state, $stateParams, Listing, Offer, listing){
 
 	$scope.listing = listing
 

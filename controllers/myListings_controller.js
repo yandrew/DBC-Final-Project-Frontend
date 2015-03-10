@@ -1,4 +1,4 @@
-app.controller('MyListingsCtrl',function($scope, $interval, UserListings, Timer) {
+app.controller('MyListingsCtrl',function($scope,  $interval, UserListings, Timer) {
 	$scope.orderByField = 'expires_at';
   $scope.reverseSort = false;
 

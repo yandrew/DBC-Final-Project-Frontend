@@ -1,9 +1,9 @@
-app.service('CategoryService',function($http) {
-	var urlBase = 'http://192.168.1.135:3000/'
+app.service('CategoryService',function($http, apiService) {
+	var urlBase = apiService.urlBase;
   this.categories = [];
   this.getCategories = function() {
     var that = this;
-    return $http.get(urlBase + 'categories')
+    return $http.get(urlBase + '/categories')
   }
 
 })
