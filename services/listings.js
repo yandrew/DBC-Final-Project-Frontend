@@ -1,5 +1,5 @@
 app.factory('Listing', function($http, $q, $rootScope) {
-  var urlBase = 'http://localhost:3000/listings';
+  var urlBase = 'http://192.168.1.135:3000/listings';
   var listings = [];
   console.log('in listings service')
   return {
@@ -8,11 +8,13 @@ app.factory('Listing', function($http, $q, $rootScope) {
         for (item in data) {
           listings.push(data[item])
         }
+        console.log('Listings retrieved')
       }).error(function(err){
-        console.log("Listings data not found: " + err)
+        console.log("Listings data not found: ")
       })
     },
     all: function() {
+      if (listings === []) this.update()
       return listings
     },
     add: function(listing) {
@@ -32,7 +34,7 @@ app.factory('Listing', function($http, $q, $rootScope) {
       return listingFound;
     },
     postNew: function(params){
-      return $http.post('http://localhost:3000/listings/', params)
+      return $http.post('http://192.168.1.135:3000/listings/', params)
     }
   }
 })

@@ -1,4 +1,4 @@
-var app = angular.module('sellMe',['ui.router', 'ngAnimate', 'mgcrea.ngStrap']);  
+var app = angular.module('sellMe',['ui.router', 'ngAnimate', 'mgcrea.ngStrap', 'ngCookies']);  
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/listings');
@@ -29,7 +29,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
           templateUrl: 'templates/topmenu.html',
           controller: 'TopMenuCtrl'
         }
-      }
+      },
+       onEnter: function(Listing, User) {
+        Listing.update();
+        User.update();
+       }
     })
     .state('listings.offers', {
       url: '/offers/{listingId:int}',
@@ -45,7 +49,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('myListings',{
+    .state('listings.mylistings',{
       url: '/mylistings',
       views: {
         'main-container': {
@@ -55,6 +59,27 @@ app.config(function($stateProvider, $urlRouterProvider) {
         'top-menu': {
           templateUrl: 'templates/topmenu.html',
           controller: 'TopMenuCtrl'
+        }
+      },
+       onEnter: function(Auth, Listing, User) {
+        Listing.update();
+        User.update();
+       }
+    })
+    .state('myListings.listing', {
+      url: '/{listingId:int}',
+      views: {
+        'listing-details': {
+          templateUrl: 'templates/listingDetails.html',
+          controller: 'ListingCtrl',
+          resolve: {
+           listing: function($stateParams, Listing){
+            console.log('stateParams', $stateParams.listingId)
+            console.log('resolve listing', Listing.findById($stateParams.listingId))
+            console.log('all', Listing.all())
+             return Listing.findById($stateParams.listingId)
+           }
+          }
         }
       }
     })
@@ -86,6 +111,20 @@ app.config(function($stateProvider, $urlRouterProvider) {
         'newuser': {
           templateUrl: 'templates/new_user.html',
           controller: 'NewUserCtrl'
+        }
+      }
+    })
+    .state('listings.profile', {
+      url: '/profile',
+      views: {
+        'profile': {
+          templateUrl: 'templates/profile.html',
+          controller: 'ProfileCtrl',
+          resolve: {
+            loggedUser: function(Auth){
+              return Auth.authorize();
+            }
+          }
         }
       }
     })    

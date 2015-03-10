@@ -11,7 +11,6 @@
   <p>{{ listing.description }}</p>  
   <p>{{ listing.condition }}</p>  
   <p>{{ listing.max_price | currency }}</p>  
-
 </div>
 </div>
 
@@ -32,10 +31,13 @@
   </div>
 
 
-<div class="alert alert-success" role="alert" ng-if="message">
-  Your offer has been made
-</div>
+<div class="make-offer">
+<hr>
 <h3 class="lead text-center">Make an offer</h3>
+  <div class="alert alert-success" role="alert" ng-if="message">
+    Your offer has been made
+  </div>
+</div>
 <hr>
 <form class="form-horizontal" ng-submit="makeOffer()">
   <div class="form-group">

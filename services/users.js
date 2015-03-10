@@ -1,5 +1,5 @@
 app.factory('User', function($http, $q, $rootScope) {
-  var urlBase = 'data/users.json';
+  var urlBase = 'http://192.168.1.135:3000';
   var users = [];
 
   return {
@@ -18,8 +18,8 @@ app.factory('User', function($http, $q, $rootScope) {
     add: function(user) {
       users.push(user)
     },
-    remove: function(user) {
-      users.splice(users.indexof(user), 1)
+    remove: function(userId) {
+      $http.delete(urlBase + '/users/' + userId)
     },
     findById: function(userId) {
       var userFound;
@@ -31,8 +31,11 @@ app.factory('User', function($http, $q, $rootScope) {
       })
       return userFound;
     },
+    getById: function(userId) {
+      return $http.get(urlBase + '/users/' +  userId)
+    },
     postNew: function(params) {
-      return $http.post('http://localhost:3000/users/', params)
+      return $http.post('http://192.168.1.135:3000/users/', params)
     }    
   }
 })

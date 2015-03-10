@@ -2,23 +2,28 @@
 <!-- <h1>{{ datetime | date:'mediumTime' }}</h1>
  -->
 
-<div ui-view="newuser">
-  <div ui-view="newlisting">
-    <div ui-view="offers">
-    <div class="row vcenter">
-      <div class="col col-sm-4" ng-repeat="listing in listings | filter: queryTerm">
-        <div class="thumbnail text-center">
-          <img class="listing-image img-responsive" ng-src="{{ listing.image_url }}">
-          <div class="caption">
-            <h3>{{ listing.name }}</h3>
-            <p>{{ listing.description }}</p>
-            <p><a ui-sref="listings.offers({listingId: listing.listing_id})" class="btn btn-default" role="button">Bid: <strong>{{ listing.max_price | currency }}</strong></a></p>
-            <p><a href="#" class="btn btn-primary" role="button">Sell now: <strong>{{ listing.accept_price | currency }}</strong></a></p>
-            <p> </p>
+<p ng-if="userInfo.userId"> User logged</p>
+<p ng-if="!userInfo.userId"> Log in</p>
+
+<div ui-view="profile">
+  <div ui-view="newuser">
+    <div ui-view="newlisting">
+      <div ui-view="offers">
+      <div class="row vcenter">
+        <div class="col col-sm-4" ng-repeat="listing in listings | filter: queryTerm">
+          <div class="thumbnail text-center">
+            <img class="listing-image img-responsive" ng-src="{{ listing.image_url }}">
+            <div class="caption">
+              <h3>{{ listing.name }}</h3>
+              <p>{{ listing.description }}</p>
+              <p><a ui-sref="listings.offers({listingId: listing.listing_id})" class="btn btn-default" role="button">Bid: <strong>{{ listing.max_price | currency }}</strong></a></p>
+              <p><a href="#" class="btn btn-primary" role="button">Sell now: <strong>{{ listing.accept_price | currency }}</strong></a></p>
+              <p> </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      </div>
     </div>
   </div>
 </div>
