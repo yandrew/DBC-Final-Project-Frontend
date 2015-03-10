@@ -1,6 +1,6 @@
 app.factory('Offer', function($http, $q, $rootScope) {
 
-  var urlBase = 'http://192.168.1.135:300';
+  var urlBase = 'http://192.168.1.135:3000';
   var offers = [];
 
   return {
@@ -37,10 +37,10 @@ app.factory('Offer', function($http, $q, $rootScope) {
       return offerFound;
     },
     getOffers: function(listingId) {
-      return $http.get('http://192.168.1.135:300/listings/' + listingId)
+      return $http.get('http://192.168.1.135:3000/listings/' + listingId)
     },
     postOffer: function(listingId, params) {
-      return $http.post('http://192.168.1.135:300/listings/' + listingId + '/offers', params)
+      return $http.post('http://192.168.1.135:3000/listings/' + listingId + '/offers', params)
     }
   }
 })
