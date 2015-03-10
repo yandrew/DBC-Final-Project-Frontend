@@ -112,5 +112,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
           }
         }
       }
-    })    
+    })
+    .state('main.login', {
+    url: '/login',
+    views: {
+      'login': {
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
+      }
+     }
+    })        
 });
