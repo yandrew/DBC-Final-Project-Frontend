@@ -15,6 +15,9 @@ app.controller('NewUserCtrl', function($scope, User, Auth) {
 			password: $scope.newUser.password
 		})
 		$scope.newUser = {};
+    console.log("let's make this new user")
+    $rootScope.message = "Your profile has been created. Please log in.";
+    $state.transitionTo('main.login')
 	}
 
 })
