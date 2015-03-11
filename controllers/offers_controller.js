@@ -25,6 +25,8 @@ app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, $r
 
 	$scope.makeOffer = function() {
 		//Offer.add($scope.newOffer)
+		$scope.newOffer.image_url = $rootScope.avatar;
+		$rootScope.avatar = null
 		$scope.newOffer.user_id = $scope.loggedUser;
 
 		$scope.newOffer.listing_id = $scope.listing.listing_id

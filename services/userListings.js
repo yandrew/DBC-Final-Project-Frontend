@@ -1,5 +1,5 @@
 app.factory('UserListings', function($http, $q, $rootScope) {
-  var urlBase = 'http://192.168.1.69:3000';
+  var urlBase = 'http://sellme.herokuapp.com/';
   var listings = [];
   return {
     update: function(user_id) {

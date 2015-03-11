@@ -25,11 +25,17 @@
 		<textarea class="form-control" rows="3" id="userbio" placeholder="Tell us a little about you" ng-model="newUser.bio"></textarea>
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group" ng-controller='ImageCtrl'>
     <label for="useravatar" class="col-sm-2 control-label">Avatar</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="useravatar" placeholder="A link to a picture that represents you" ng-model="newUser.avatar">
+    <div class="col-sm-8">
+      <input class="form-control" id="useravatar" type="file" name="file" file>
+        <div class="progress-bar" role="progressbar" aria-valuenow="{{ uploadProgress }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ uploadProgress }}%;">
+            {{ uploadProgress == 0 ? '' : uploadProgress + '%'}}
+        </div>
+        <p class='alert alert-danger' role="alert" ng-if='errorMSG'>{{errorMSG}}</p>
+      </input>
     </div>
+      <div class="col-sm-2"><a class="btn btn-primary pull-right" ng-click="upload()">Upload</a></div>
   </div>
   <div class="form-group">
     <label for="userpassword" class="col-sm-2 control-label">Password</label>
