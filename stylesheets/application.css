@@ -1,7 +1,7 @@
- @font-face { 
-  font-family: Catull; 
-  src: url('../fonts/Catull.ttf'); 
-} 
+ @font-face {
+  font-family: Catull;
+  src: url('../fonts/Catull.ttf');
+}
 
 .main-page-title {
   font-family: Catull, sans-serif;
@@ -102,4 +102,14 @@
 
 .login-btn {
   margin-left: 36%;
+}
+
+td.delete {
+  border: none !important;
+}
+
+table.table.table-bordered {
+  border-right: none;
+  border-bottom: none;
+
 }
