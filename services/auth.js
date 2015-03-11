@@ -1,6 +1,6 @@
 app.service('Auth', function($cookieStore, $http, $state, $rootScope) {
 
-  var urlBase = 'http://sellme.herokuapp.com/';
+  var urlBase = 'http://sellme.herokuapp.com';
 
   this.userInfo = {};
   var self = this;

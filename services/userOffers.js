@@ -1,5 +1,5 @@
 app.factory('UserOffers', function($http, $q, $rootScope) {
-  var urlBase = 'http://sellme.herokuapp.com/';
+  var urlBase = 'http://sellme.herokuapp.com';
   var offers = [];
   return {
     update: function(user_id) {

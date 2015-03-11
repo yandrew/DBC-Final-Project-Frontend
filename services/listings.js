@@ -1,5 +1,5 @@
 app.factory('Listing', function($http, $q, $rootScope) {
-  var urlBase = 'http://sellme.herokuapp.com/';
+  var urlBase = 'http://sellme.herokuapp.com';
   var listings = [];
   console.log('in listings service')
   return {
@@ -32,7 +32,7 @@ app.factory('Listing', function($http, $q, $rootScope) {
       return $http.get(urlBase + '/listings/' + listingId)
     },
     postNew: function(params){
-      return $http.post('http://sellme.herokuapp.com//listings/', params)
+      return $http.post(urlBase + '/listings/', params)
     }
   }
 })

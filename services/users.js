@@ -1,5 +1,5 @@
 app.factory('User', function($http, $q, $rootScope) {
-  var urlBase = 'http://sellme.herokuapp.com/';
+  var urlBase = 'http://sellme.herokuapp.com';
   var users = [];
 
   return {
@@ -35,7 +35,7 @@ app.factory('User', function($http, $q, $rootScope) {
       return $http.get(urlBase + '/users/' +  userId)
     },
     postNew: function(params) {
-      return $http.post('http://sellme.herokuapp.com//users/', params)
+      return $http.post(urlBase + '/users/', params)
     }
   }
 })

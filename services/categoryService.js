@@ -1,9 +1,9 @@
 app.service('CategoryService',function($http) {
-	var urlBase = 'http://sellme.herokuapp.com//'
+	var urlBase = 'http://sellme.herokuapp.com'
   this.categories = [];
   this.getCategories = function() {
     var that = this;
-    return $http.get(urlBase + 'categories')
+    return $http.get(urlBase + '/categories')
   }
 
 })
