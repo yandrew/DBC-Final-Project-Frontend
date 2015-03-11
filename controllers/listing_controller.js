@@ -10,17 +10,21 @@ app.controller('ListingCtrl', function($scope, $stateParams, Offer, $timeout, $s
 	console.log("offers are this: ", $scope.offers)
 
 	$scope.deleteListing = function(){
-		Listing.remove($scope.listing.listing_id);
-		$state.transitionTo('main.mylistings')
-		$rootScope.message = "Your listing was successfully deleted"
+		var answer = confirm("Are you sure you want to delete this listing?")
+		if (answer) {		
+			Listing.remove($scope.listing.listing_id);
+			$state.transitionTo('main.mylistings')
+			$rootScope.message = "Your listing was successfully deleted"
+		}
 	}
 
 	$scope.acceptOffer = function(offer_id, index){
 		Offer.accept(offer_id);
-		$scope.message = "Congratulations on your purchase! This listing has been closed. You will receive the contact information for the buyer in your email in the next 5 minutes. Please contact him to close the deal"
+		$scope.message = "Congratulations on your purchase! This listing has been closed. You will receive the seller's contact information in your email in the next 5 minutes. Please contact him to close the deal."
 		$timeout(function(){
 			$scope.message = false
 		},10000)
+		$scope.listing.closed = true;
 	}
 
 	$scope.invalidateOffer = function(offer_id, index){
@@ -31,5 +35,7 @@ app.controller('ListingCtrl', function($scope, $stateParams, Offer, $timeout, $s
 			$scope.message = false
 		},3000)
 	}
+
+	console.log('listing to debug', $scope.listing)
 
 })

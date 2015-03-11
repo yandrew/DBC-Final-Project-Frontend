@@ -22,6 +22,9 @@ app.controller('MyListingsCtrl',function($scope, $interval, $rootScope, $state, 
   // $timeout(function(){
   // 	console.log($scope.listings)
   // },1000)
+  setTimeout(function(){
+    console.log($scope.listings)
+  },1000)
   $scope.countDown = function(timeEnd) {
     return Timer.countdown(timeEnd);
   }
