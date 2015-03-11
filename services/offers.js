@@ -26,9 +26,16 @@ app.factory('Offer', function($http, $q, $rootScope) {
     add: function(offer) {
       offers.push(offer)
     },
-    remove: function(offerId) {
+    remove: function(offerId, userId) {
       $http.delete(urlBase + '/offers/' + offerId).success(function(){
-        console.log("offer was deleted")
+        console.log("offer was deleted in")
+        offers.forEach(function(elem, index){
+          console.log(elem.id)
+          console.log(offerId)
+          if (elem.id === offerId)
+            console.log("removing element")
+            offers.splice(index, 1)
+        });
       })
     },
     findById: function(offerId) {

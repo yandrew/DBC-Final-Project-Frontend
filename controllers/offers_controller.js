@@ -1,4 +1,4 @@
-app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, Listing, Offer, listing, Auth){
+app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, $rootScope, $state, Listing, Offer, listing, Auth){
 
   $scope.loggedUser = Auth.userInfo.loggedUser
 
@@ -29,7 +29,7 @@ app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, Li
 		$scope.newOffer.listing_id = $scope.listing.listing_id
 		Offer.postOffer($scope.newOffer).then(function(res){
 			console.log("post made", res)
-		}, function(err) {
+		}, function(er) {
 			console.log("post failed", err)
 		})
 		$scope.message = "Your offer has been made"
@@ -37,6 +37,9 @@ app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, Li
 			$scope.message = "";
 		}, 2000)
 		$scope.newOffer = {};
+		$state.transitionTo('main.myoffers')
+		$rootScope.message = "Your offer has been made. You can track in the seller dashboard below";
+
 	}
 
 })

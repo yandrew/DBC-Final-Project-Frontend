@@ -20,4 +20,6 @@ app.controller('ProfileCtrl', function($scope, loggedUser, Auth, User){
 		Auth.logout();
 	}
 
+	$scope.now = new Date() 
+
 })
