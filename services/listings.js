@@ -1,10 +1,13 @@
 app.factory('Listing', function($http, $q, $rootScope) {
-  var urlBase = 'http://192.168.1.69:3000/listings';
+  var urlBase = 'http://192.168.1.69:3000';
   var listings = [];
   console.log('in listings service')
   return {
     update: function() {
-      $http.get(urlBase).success(function(data){
+      $http.get(urlBase + '/listings').success(function(data){
+        while (listings.length > 0) {
+          listings.pop();
+        }
         for (item in data) {
           listings.push(data[item])
         }
@@ -20,18 +23,13 @@ app.factory('Listing', function($http, $q, $rootScope) {
     add: function(listing) {
       listings.push(listing)
     },
-    remove: function(listing) {
-      listings.splice(listings.indexof(listing), 1)
+    remove: function(listingId) {
+      $http.delete(urlBase + '/listings/' + listingId).success(function(){
+        console.log("Listing was deleted")
+      })
     },
     findById: function(listingId) {
-      var listingFound;
-      listings.forEach(function(elem){
-        if (elem.listing_id === listingId) {
-          console.log('HERE', elem)
-          listingFound = elem;
-        }
-      })
-      return listingFound;
+      return $http.get(urlBase + '/listings/' + listingId)
     },
     postNew: function(params){
       return $http.post('http://192.168.1.69:3000/listings/', params)

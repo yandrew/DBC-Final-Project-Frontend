@@ -1,12 +1,15 @@
 app.factory('Offer', function($http, $q, $rootScope) {
 
-  var urlBase = 'http://192.168.1.69:3000/';
+  var urlBase = 'http://192.168.1.69:3000';
   var offers = [];
 
   return {
     update: function(user_id) {
       // console.log(user_id)
       $http.get(urlBase + '/users/'+ user_id + '/offers').success(function(data){
+        while (offers.length > 0) {
+          offers.pop();
+        }
         if (data.length != offers.length){
           for (var item in data) {
             offers.push(data[item]);
@@ -23,24 +26,20 @@ app.factory('Offer', function($http, $q, $rootScope) {
     add: function(offer) {
       offers.push(offer)
     },
-    remove: function(offer) {
-      offers.splice(offers.indexof(offer), 1)
+    remove: function(offerId) {
+      $http.delete(urlBase + '/offers/' + offerId).success(function(){
+        console.log("offer was deleted")
+      })
     },
     findById: function(offerId) {
-      var offerFound;
-      offers.forEach(function(elem){
-        if (elem.id === offerId) {
-          console.log('HERE', elem)
-          offerFound = elem;
-        }
-      })
-      return offerFound;
+      return $http.get(urlBase + '/offers/' + offerId)
     },
     getOffers: function(listingId) {
-      return $http.get('hhttp://192.168.1.69:3000/listings/' + listingId)
+      return $http.get('http://192.168.1.69:3000/listings/' + listingId)
     },
-    postOffer: function(listingId, params) {
-      return $http.post('hhttp://192.168.1.69:3000/listings/' + listingId + '/offers', params)
+    postOffer: function(params) {
+      console.log("in offers.js here are params: ", params)
+      return $http.post('http://192.168.1.69:3000/offers', params)
     },
     accept: function(offer_id){
       $http.post(urlBase + '/offers/accept', {offer_id: offer_id})

@@ -17,7 +17,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       },
        onEnter: function(Listing, User) {
         Listing.update();
-        User.update();
+        //User.update();
        }
     })
     .state('main.listings', {
@@ -63,9 +63,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
           controller: 'ListingCtrl',
           resolve: {
            listing: function($stateParams, Listing){
-            console.log('stateParams', $stateParams.listingId)
-            console.log('resolve listing', Listing.findById($stateParams.listingId))
-            console.log('all', Listing.all())
              return Listing.findById($stateParams.listingId)
            }
           }

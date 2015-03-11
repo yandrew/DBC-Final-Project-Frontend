@@ -1,6 +1,10 @@
-app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, Listing, Offer, listing){
+app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, Listing, Offer, listing, Auth){
 
-	$scope.listing = listing
+  $scope.loggedUser = Auth.userInfo.loggedUser
+
+	$scope.listing = listing.data
+	$scope.offers = $scope.listing.offers
+	console.log('these are the offers', $scope.offers)
 
 	$timeout(function(){
 		if (!$scope.listing)
@@ -8,18 +12,22 @@ app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, Li
 			$scope.newOffer.productPrice = $scope.listing.lowest_price;
 	}, 1000)
 
-	Offer.getOffers($stateParams.listingId).then(function(res){
-		$scope.offers = res.data.offers;
-		console.log('offers', $scope.offers)
-	})
+	// Offer.getOffers($stateParams.listingId).then(function(res){
+	// 	$scope.offers = res.data.offers;
+	// 	console.log('offers', $scope.offers)
+	// })
+
+	console.log("Here are the listing", $scope.listing)
 
 	$scope.newOffer = {}
 	if (listing) $scope.newOffer.productPrice = listing.lowest_price
 
 	$scope.makeOffer = function() {
 		//Offer.add($scope.newOffer)
-		$scope.newOffer.user_id = 1;
-		Offer.postOffer($scope.listing.listing_id, $scope.newOffer).then(function(res){
+		$scope.newOffer.user_id = $scope.loggedUser;
+
+		$scope.newOffer.listing_id = $scope.listing.listing_id
+		Offer.postOffer($scope.newOffer).then(function(res){
 			console.log("post made", res)
 		}, function(err) {
 			console.log("post failed", err)

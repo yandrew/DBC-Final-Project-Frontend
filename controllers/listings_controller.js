@@ -14,11 +14,6 @@ app.controller('ListingsCtrl', function($scope, $interval, $modal, Listing, User
 
   $scope.listings = Listing.all();
 
-  $scope.userInfo = Auth.userInfo
-
-  Listing.update();
-  User.update();
-  Product.update();
-  Offer.update();
+  $scope.userInfo = Auth.userInfo;
 
 })
