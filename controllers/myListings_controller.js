@@ -12,15 +12,15 @@ app.controller('MyListingsCtrl',function($scope, $interval, $rootScope, $state, 
   UserListings.update($scope.loggedUser)
   console.log("Auth.userinfo in mylistings is...", Auth.userInfo.loggedUser)
 
+
 	$scope.orderByField = 'expires_at';
   $scope.reverseSort = false;
-
-	//UserListings.update();
+  //UserListings.update();
 
   UserListings.update($scope.loggedUser);
   $scope.listings = UserListings.all();
   // $timeout(function(){
-  // 	console.log($scope.listings)
+  //  console.log($scope.listings)
   // },1000)
   setTimeout(function(){
     console.log($scope.listings)

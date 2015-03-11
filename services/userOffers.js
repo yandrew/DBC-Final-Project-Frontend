@@ -1,5 +1,5 @@
 app.factory('UserOffers', function($http, $q, $rootScope) {
-  var urlBase = 'http://192.168.1.69:3000';
+  var urlBase = 'http://localhost:3000';
   var offers = [];
   return {
     update: function(user_id) {
