@@ -28,14 +28,7 @@ app.factory('Offer', function($http, $q, $rootScope) {
     },
     remove: function(offerId, userId) {
       $http.delete(urlBase + '/offers/' + offerId).success(function(){
-        console.log("offer was deleted in")
-        offers.forEach(function(elem, index){
-          console.log(elem.id)
-          console.log(offerId)
-          if (elem.id === offerId)
-            console.log("removing element")
-            offers.splice(index, 1)
-        });
+        console.log("offer was deleted")
       })
     },
     findById: function(offerId) {

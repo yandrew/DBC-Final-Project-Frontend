@@ -30,7 +30,7 @@
         <td><a ui-sref="main.offers({listingId: offer.listing.id})">{{offer.product.name}}</a></td>
         <td>{{countDown(offer.listing.expires_at)}}</td>
         <td>{{offer.offer_price | currency}}</td>
-        <td><a href="#" ng-click="deleteOffer(offer.id)">Delete</a></td>
+        <td><a href="#" ng-click="deleteOffer(offer.id, $index)">Delete</a></td>
       </tr>
     </tbody>
   </table>

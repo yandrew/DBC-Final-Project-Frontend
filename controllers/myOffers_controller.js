@@ -19,9 +19,9 @@ app.controller('MyOffersCtrl', function($scope, $interval, Offer, $stateParams, 
     return Timer.countdown(timeEnd);
   };
 
-  $scope.deleteOffer = function(offerId){
+  $scope.deleteOffer = function(offerId, index){
   	Offer.remove(offerId, $scope.loggedUser)
-    $rootScope.digest();
+    $scope.offers.splice(index, 1)
   }
 
 });
