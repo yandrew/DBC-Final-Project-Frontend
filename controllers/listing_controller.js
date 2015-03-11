@@ -1,4 +1,4 @@
-app.controller('ListingCtrl', function($scope, $stateParams, Offer, $timeout, Listing, listing){
+app.controller('ListingCtrl', function($scope, $stateParams, Offer, $timeout, $state, $rootScope, Listing, listing){
 
 	// listing.then(function(res){
 	// 	$scope.listing = res.data
@@ -11,6 +11,8 @@ app.controller('ListingCtrl', function($scope, $stateParams, Offer, $timeout, Li
 
 	$scope.deleteListing = function(){
 		Listing.remove($scope.listing.listing_id);
+		$state.transitionTo('main.mylistings')
+		$rootScope.message = "Your listing was successfully deleted"
 	}
 
 	$scope.acceptOffer = function(offer_id, index){

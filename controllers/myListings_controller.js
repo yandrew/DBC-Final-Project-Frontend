@@ -1,4 +1,12 @@
-app.controller('MyListingsCtrl',function($scope, $interval, UserListings, Timer, User, Auth) {
+app.controller('MyListingsCtrl',function($scope, $interval, $rootScope, $state, $timeout, UserListings, Timer, User, Auth) {
+
+  //messages coming from other controllers
+  $scope.message = $rootScope.message
+  delete $rootScope.message
+
+  $timeout(function(){
+    $scope.message = false
+  }, 10000)
 
   $scope.loggedUser = Auth.userInfo.loggedUser
   UserListings.update($scope.loggedUser)
@@ -9,6 +17,7 @@ app.controller('MyListingsCtrl',function($scope, $interval, UserListings, Timer,
 
 	//UserListings.update();
 
+  UserListings.update($scope.loggedUser);
   $scope.listings = UserListings.all();
   // $timeout(function(){
   // 	console.log($scope.listings)

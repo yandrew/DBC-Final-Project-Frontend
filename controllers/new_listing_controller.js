@@ -1,4 +1,4 @@
-app.controller('NewListingCtrl', function($scope, $timeout, Listing, CategoryService, loggedUser) {
+app.controller('NewListingCtrl', function($scope, $timeout, $rootScope, $state, Listing, CategoryService, loggedUser) {
 
 	$scope.loggedUser = loggedUser;
 	console.log('logged user in new listing ctrl', $scope.loggedUser)
@@ -20,11 +20,9 @@ app.controller('NewListingCtrl', function($scope, $timeout, Listing, CategorySer
 		// 	console.log("post failed", err)
 		// });
 		$scope.newListing = {};
-		$scope.message="Your listing has been successfully added";
-		$timeout(function(){
-			$scope.message = false;
-		},3000)
-	}
+		$rootScope.message = "Your listing has been successfully added";
+		$state.transitionTo('main.mylistings')
+	}	
 
 
 })
