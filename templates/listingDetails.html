@@ -1,6 +1,6 @@
 <div class="col col-sm-10">
 <h3 class="lead text-center">Product Details </h3>
-<p style="text-align: center;"><a href="#" ng-click="deleteListing()">Remove this listing</a></p>
+<p style="text-align: center;"><a href="#" ng-click="deleteListing()" ng-if="!listing.closed">Cancel this listing</a></p>
 <hr>
 <div class="col col-sm-6">
   <img  class="listing-image" ng-src="{{ listing.image_url }}">
@@ -22,6 +22,7 @@
 <div class="col col-sm-10">
 <h3 class="lead text-center">Ongoing offers</h3>
 <hr>
+<div ng-if="!listing.closed && offers.length > 0">
   <div class="col col-sm-4" ng-repeat="offer in offers">
     <div class="thumbnail text-center" >
       <img class="listing-image img-responsive" ng-src="{{ offer.image_url }}">
@@ -37,14 +38,19 @@
     <button class="btn btn-danger" ng-click="invalidateOffer(offer.offer_id, $index)">Invalidate</button>
 		</div>
   </div>
+</div>
+<div ng-if="(!listing.closed && offers.length === 0)" class="text-center">
+  <p>You have no offers.</p>
+</div>
+<div ng-if="(listing.closed)" class="text-center">
+  <p>This listing has been closed. Congratulations on your purchase!</p>
+</div>
 
+</div>
 
 </div>
 
 
-</div>
-
-<hr>
 
 
 
