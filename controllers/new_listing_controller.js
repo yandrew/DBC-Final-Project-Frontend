@@ -10,6 +10,8 @@ app.controller('NewListingCtrl', function($scope, $timeout, $rootScope, $state, 
 	$scope.newListing = {};
 	$scope.currentDate = new Date();
 	$scope.makeListing = function() {
+		$scope.newListing.image_url = $rootScope.avatar
+		$rootScope.avatar = null
 		$scope.newListing.user_id = $scope.loggedUser;
 		$scope.newListing.category_id = $scope.newListing.category_id['id']
 		console.log($scope.newListing)

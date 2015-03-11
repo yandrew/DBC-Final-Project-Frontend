@@ -1,5 +1,5 @@
 
-app.controller('ImageCtrl', function($scope, $rootScope) {
+app.controller('ImageCtrl', function($scope, $rootScope, $timeout) {
 var picsUrl = [];
 
 $scope.picsUrl = picsUrl;
@@ -23,7 +23,10 @@ $scope.picsUrl = picsUrl;
     if($scope.file) {
         var fileSize = Math.round(parseInt($scope.file.size));
         if (fileSize > 5292880) {
-          toastr.error('Sorry, your attachment is too big. <br/> Maximum 5MB file attachment allowed','File Too Large');
+          $scope.errorMSG = 'Sorry, your attachment is too big. Maximum 5MB file attachment allowed';
+          $timeout(function(){
+            $scope.errorMSG = null;
+          }, 5000)
           return false;
         }
         // Unique String Generator
@@ -34,7 +37,7 @@ $scope.picsUrl = picsUrl;
 
         bucket.putObject(params, function(err, data) {
           if(err) {
-            toastr.error(err.message,err.code);
+            // toastr.error(err.message,err.code);
             return false;
           }
           else {
@@ -56,8 +59,9 @@ $scope.picsUrl = picsUrl;
         })
       }
       else {
+        alert('File is too Large, 5MB Maximum')
         // No File Selected
-        toastr.error('Please select a file to upload');
+        // toastr.error('Please select a file to upload');
       }
     }
   $scope.uniqueString = function() {
