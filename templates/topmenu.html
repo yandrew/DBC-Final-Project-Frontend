@@ -5,6 +5,7 @@
 	  <li  ng-if="userLogged"><a ui-sref="main.mylistings" class="lead small-lead" ><span class="glyphicon glyphicon-align-center"></span> My Listings</a></li>
 	  <li  ng-if="userLogged"><a ui-sref="main.myoffers" class="lead small-lead" ><span class="glyphicon glyphicon-shopping-cart"></span> My Offers</a></li>
 	  <li ng-if="!userLogged"><a ui-sref="main.login" class="lead small-lead" ><span class="glyphicon glyphicon-log-in" ></span> Log In</a></li>
+	  <li  ng-if="!userLogged"><a href="" ui-sref="main.newUser" class="lead small-lead"><span class="glyphicon glyphicon-user" ></span> Sign up</a></li>
 	  <li  ng-if="userLogged"><a href="" ng-click="logout()" class="lead small-lead"><span class="glyphicon glyphicon-log-out" ></span> Log Out</a></li>	  
   </ul>
 

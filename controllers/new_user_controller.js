@@ -1,4 +1,4 @@
-app.controller('NewUserCtrl', function($scope, User) {
+app.controller('NewUserCtrl', function($scope, User, Auth) {
 
 	$scope.newUser = {};
 
@@ -9,11 +9,15 @@ app.controller('NewUserCtrl', function($scope, User) {
 		}, function(err) {
 			console.log("post failed", err)
 		});
+		console.log($scope.newUser)
+		Auth.authenticate({
+			username: $scope.newUser.username,
+			password: $scope.newUser.password
+		})
 		$scope.newUser = {};
 	}
 
 })
-
 
   // t.string :username
   // t.string :password_hash

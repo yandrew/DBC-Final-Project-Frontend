@@ -13,4 +13,8 @@ app.controller('MyOffersCtrl', function($scope, $interval, Offer, $stateParams, 
     return Timer.countdown(timeEnd);
   };
 
+  $scope.deleteOffer = function(offerId){
+  	Offer.remove(offerId)
+  }
+
 });
