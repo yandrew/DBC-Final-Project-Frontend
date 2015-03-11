@@ -1,6 +1,6 @@
 app.factory('Offer', function($http, $q, $rootScope) {
 
-  var urlBase = 'http://sellme.herokuapp.com';
+  var urlBase = 'http://192.168.1.69:3000';
   var offers = [];
 
   return {
