@@ -22,6 +22,10 @@ app.controller('MyOffersCtrl', function($scope, $interval, Offer, $stateParams, 
   $scope.deleteOffer = function(offerId, index){
   	Offer.remove(offerId, $scope.loggedUser)
     $scope.offers.splice(index, 1)
+    $scope.message = "Your offer have been cancelled. Don't worry, we will notify the buyer"
+    $timeout(function(){
+      $scope.message = false
+  },10000)
   }
 
 });
