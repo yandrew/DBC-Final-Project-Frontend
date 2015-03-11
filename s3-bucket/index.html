@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="angular-s3-upload">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Angular AWS S3 Upload</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Styles -->
+  
+  <!-- JavaScript Libs -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>   
+  <script src="libs/angular.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>    
+  <script src="libs/aws-sdk.js"></script> 
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <!-- Our JavaScript -->
+  <script src="application.js"></script> 
+  <script src="s3Controller.js"></script>   
+  <script src="s3Directives.js"></script>  
+</head>
+
+<body ng-controller="UploadController">
+  <div class="picture-album row">
+    <div class="col-sm-4" ng-repeat="url in picsUrl">
+      <img style='width:500px' ng-src="{{url}}"/>
+    </div>
+  </div>
+
+
+
+      <!-- The Upload Form -->
+      <div class="col-md-4">
+          <div class="form-group">
+            <input class="form-control" type="file" name="file" file></input> 
+            <div class="form-control">
+              <div class="progress-bar" role="progressbar" aria-valuenow="{{ uploadProgress }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ uploadProgress }}%;">
+                  {{ uploadProgress == 0 ? '' : uploadProgress + '%' }}
+              </div>
+            </div>
+            <a class="form-control btn btn-primary btn-md pull-right" ng-click="upload()">Upload</a>
+            <h6 class="pull-right">Maximum Upload Size is 5MB</h6>
+        </div>
+      </div>     
+  
+</body>
+</html>
