@@ -23,6 +23,11 @@
           Price <span ng-show="orderByField == 'max_price'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
           </a>
         </th>
+        <th>
+          <a href="#" ng-click="orderByField='max_price'; reverseSort = !reverseSort">
+          Status <span ng-show="orderByField == 'max_price'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -30,6 +35,7 @@
         <td><a ui-sref="^.listing({listingId: listing.listing_id})">{{listing.name}}</a></td>
         <td>{{countDown(listing.expires_at)}}</td>
         <td>{{listing.max_price | currency}}</td>
+        <td>{{ listing.closed ? 'Closed' : 'Ongoing' }}</td>
       </tr>
     </tbody>
   </table>

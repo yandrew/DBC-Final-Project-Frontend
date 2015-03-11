@@ -4,6 +4,7 @@ app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, $r
 
 	$scope.listing = listing.data
 	$scope.offers = $scope.listing.offers
+	console.log('this is the listing', $scope.listing)
 	console.log('these are the offers', $scope.offers)
 
 	$timeout(function(){
@@ -38,7 +39,7 @@ app.controller('OffersCtrl', function($scope, $timeout, $state, $stateParams, $r
 		}, 2000)
 		$scope.newOffer = {};
 		$state.transitionTo('main.myoffers')
-		$rootScope.message = "Your offer has been made. You can track in the seller dashboard below";
+		$rootScope.message = "Your offer has been made. You can track them below";
 
 	}
 
