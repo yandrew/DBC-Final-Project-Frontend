@@ -1,12 +1,9 @@
-
 app.controller('ImageCtrl', function($scope, $rootScope, $timeout) {
 var picsUrl = [];
 
 $scope.picsUrl = picsUrl;
 
-  $scope.sizeLimit      = 10585760; // 10MB in Bytes
   $scope.uploadProgress = 0;
-  $scope.creds          = {};
 
   $scope.upload = function() {
     AWS.config.region = 'us-east-1';
@@ -37,14 +34,10 @@ $scope.picsUrl = picsUrl;
 
         bucket.putObject(params, function(err, data) {
           if(err) {
-            // toastr.error(err.message,err.code);
             return false;
           }
           else {
             // Upload Successfully Finished
-            toastr.success('File Uploaded Successfully', 'Done');
-            console.log("finished uploading")
-            
             // Reset The Progress Bar
             setTimeout(function() {
               $scope.uploadProgress = 0;
@@ -54,14 +47,10 @@ $scope.picsUrl = picsUrl;
         })
         .on('httpUploadProgress',function(progress) {
           $scope.uploadProgress = Math.round(progress.loaded / progress.total * 100);
-          
           $scope.$digest();
         })
       }
       else {
-        alert('File is too Large, 5MB Maximum')
-        // No File Selected
-        // toastr.error('Please select a file to upload');
       }
     }
   $scope.uniqueString = function() {
