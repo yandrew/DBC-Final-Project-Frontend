@@ -29,14 +29,10 @@
       <div class="caption">
         <h3>{{ offer.name }}</h3>
         <p>{{ offer.description }}</p>
-        <p><p>Bid: <strong>{{ offer.offer_price | currency }}</strong></p></p>
-        <p> </p>
+        <p>Bid: <strong>{{ offer.offer_price | currency }}</strong></p>
       </div>
-    </div>
-    <div class="text-center">
     <button class="btn btn-primary" ng-click="acceptOffer(offer.offer_id, $index)">Accept</button>
-    <button class="btn btn-danger" ng-click="invalidateOffer(offer.offer_id, $index)">Invalidate</button>
-		</div>
+    </div>
   </div>
 </div>
 <div ng-if="(!listing.closed && offers.length === 0)" class="text-center">

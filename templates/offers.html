@@ -15,11 +15,15 @@
 </div>
 
 <br>
+<<<<<<< HEAD
 <div ng-if="!listing.closed && offers.length > 0">
+=======
+>>>>>>> 54179609ec190d598a724718b447bae8bbd408f9
 
 <div class="col col-sm-10">
 <h3 class="lead text-center">Ongoing offers</h3>
 <hr>
+<div ng-if="(!listing.closed && offers.length > 0)">
   <div class="col col-sm-4" ng-repeat="offer in offers">
     <div class="thumbnail text-center" >
       <img class="listing-image img-responsive" ng-src="{{ offer.image_url }}">
@@ -32,8 +36,13 @@
       </div>
     </div>
   </div>
+</div>
 
+<div ng-if="(offers.length === 0)" class="text-center">
+  <p>This product has no offers yet.</p>
+</div>
 
+<div ng-if="(!listing.closed)">
 <div class="make-offer">
 <hr>
 <h3 class="lead text-center">Make an offer</h3>
@@ -113,11 +122,20 @@
 
 </div>
 
+<<<<<<< HEAD
+=======
+<div ng-if="(listing.closed)" class="text-center">
+  <p>This listing has been closed. You can no longer bid on it.</p>
+</div>
+
+
+>>>>>>> 54179609ec190d598a724718b447bae8bbd408f9
 <!-- next div closes the if condition -->
 </div> 
 
 
-</div>
 
+<!-- </div>
+ -->
 
 

@@ -124,12 +124,20 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
      }
     })
+<<<<<<< HEAD
     .state('main.offer', {
+=======
+  .state('main.offer', {
+>>>>>>> 54179609ec190d598a724718b447bae8bbd408f9
     url: '/offer',
     views: {
       'offer': {
         templateUrl: 'templates/offer.html'
       }
      }
+<<<<<<< HEAD
     })
+=======
+    })    
+>>>>>>> 54179609ec190d598a724718b447bae8bbd408f9
 });
