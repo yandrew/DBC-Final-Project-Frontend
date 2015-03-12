@@ -30,14 +30,18 @@ app.service('Timer',function() {
    		return days + " days ";
    	
    	} else if (days == 1  && hours >= 6) {
-   		return days + " day " +hours + " hrs ";
+   		return days + " day, " +hours + " hrs ";
    	
    	} else if (days == 1  && hours < 6) {
-      return days + " day " + hours + " hrs " + minutes + " minutes " + seconds + " s";
+      return days + " day " + hours + " hrs and " + minutes + " minutes ";
     
-    } else if (days < 1 && hours >= 1 ){
+    } else if (days < 1 && hours >= 6){
+      return hours + " hrs " + minutes + " minutes ";
+    }
+
+      else if (days < 1 && hours >= 1 ){
       return hours + " hrs " + minutes + " minutes " + seconds + " s";
-      console.log("we are in the timer", hours)
+
     } else if (hours < 1 && minutes >= 1){
    		return minutes + " minutes " + seconds + " s";
    	

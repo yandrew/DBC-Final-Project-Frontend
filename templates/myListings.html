@@ -3,12 +3,11 @@
 <div class="col col-sm-12">
 <h3 class="lead">My Listings</h3>
 <hr>
- <section>
+ <section class="listing_details">
   <div class="alert alert-success" role="alert" ng-if="message">{{ message }}</div>
   <table class="table table-bordered" ng-cloak>
-    <p>test</p>
     <thead>
-      <tr>
+      <tr class="listing_header">
         <th>
           <a  href="#" ng-click="orderByField='name'; reverseSort = !reverseSort">
           Product Title <span ng-show="orderByField == 'name'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
@@ -47,8 +46,9 @@
     </tbody>
   </table>
 </section>
-
+<div class="create_listing_button">
 <button class="btn btn-primary" ui-sref="main.newListing">Create a new listing</button>
+</div>
 
 </div>
 </div>

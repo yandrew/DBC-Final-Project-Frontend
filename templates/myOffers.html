@@ -1,11 +1,11 @@
  <div class="col col-sm-12">
 <h3 class="lead">My Offers</h3>
 <hr>
-<section>
+<section class="listing_details">
   <div class="alert alert-success" role="alert" ng-if="message">{{ message }}</div>
   <table class="table table-bordered">
     <thead>
-      <tr>
+      <tr class="listing_header">
         <th>
           <a href="#" ng-click="orderByField='title'; reverseSort = !reverseSort">
           Product listed <span ng-show="orderByField == 'title'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
