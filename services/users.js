@@ -1,5 +1,5 @@
 app.factory('User', function($http, $q, $rootScope) {
-  var urlBase = 'http://192.168.1.69:3000';
+  var urlBase = 'http://localhost:3000';
   var users = [];
 
   return {
@@ -35,7 +35,7 @@ app.factory('User', function($http, $q, $rootScope) {
       return $http.get(urlBase + '/users/' +  userId)
     },
     postNew: function(params) {
-      return $http.post('http://192.168.1.69:3000/users/', params)
+      return $http.post('http://localhost:3000/users/', params)
     }
   }
 })

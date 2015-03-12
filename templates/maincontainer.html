@@ -6,23 +6,14 @@
 <p ng-if="!userInfo.userId"> Log in</p>
  -->
 
-<div ui-view="offer">
-<div ui-view="login">
-  <div ui-view="listings">
-    <div ui-view="listing-details">
-      <div ui-view="myoffers">
-        <div ui-view="mylistings">
-          <div ui-view="profile">
-            <div ui-view="newuser">
-              <div ui-view="newlisting">
-                <div ui-view="offers">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+<div ui-view="login"></div>
+<div ui-view="listings"></div>
+<div ui-view="myoffers"></div>
+<div ui-view="mylistings"></div>
+<div ui-view="profile"></div>
+<div ui-view="newuser"></div>
+<div ui-view="newlisting"></div>
+<div ui-view="offers"></div>
+<div ui-view="listing-details"></div>
+<div ui-view="offer"></div>
+<div ui-view="comments"></div>

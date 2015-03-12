@@ -1,6 +1,6 @@
 app.service('Auth', function($cookieStore, $http, $state, $rootScope) {
 
-  var urlBase = 'http://192.168.1.69:3000';
+  var urlBase = 'http://localhost:3000';
 
   this.userInfo = {};
   var self = this;

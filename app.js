@@ -66,6 +66,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
              return Listing.findById($stateParams.listingId)
            }
           }
+        },
+        'comments': {
+          templateUrl: "templates/comments.html"
         }
       }
     })
@@ -128,8 +131,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
     url: '/offer',
     views: {
       'offer': {
-        templateUrl: 'templates/offer.html'
+        templateUrl: 'templates/offer.html',
+      },
+      'comments': {
+        templateUrl: 'templates/comments.html'
       }
      }
-    })    
+    })
 });

@@ -1,6 +1,6 @@
 app.factory('Offer', function($http, $q, $rootScope) {
 
-  var urlBase = 'http://192.168.1.69:3000';
+  var urlBase = 'http://localhost:3000';
   var offers = [];
 
   return {
@@ -35,11 +35,11 @@ app.factory('Offer', function($http, $q, $rootScope) {
       return $http.get(urlBase + '/offers/' + offerId)
     },
     getOffers: function(listingId) {
-      return $http.get('http://192.168.1.69:3000/listings/' + listingId)
+      return $http.get('http://localhost:3000/listings/' + listingId)
     },
     postOffer: function(params) {
       console.log("in offers.js here are params: ", params)
-      return $http.post('http://192.168.1.69:3000/offers', params)
+      return $http.post('http://localhost:3000/offers', params)
     },
     accept: function(offer_id){
       $http.post(urlBase + '/offers/accept', {offer_id: offer_id})
