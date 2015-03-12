@@ -10,7 +10,7 @@ app.controller('MyListingsCtrl',function($scope, $interval, $rootScope, $state, 
 
   $scope.loggedUser = Auth.userInfo.loggedUser
   UserListings.update($scope.loggedUser)
-  console.log("Auth.userinfo in mylistings is...", Auth.userInfo.loggedUser)
+  // console.log("Auth.userinfo in mylistings is...", Auth.userInfo.loggedUser)
 
 	$scope.orderByField = 'expires_at';
   $scope.reverseSort = false;
@@ -22,10 +22,7 @@ app.controller('MyListingsCtrl',function($scope, $interval, $rootScope, $state, 
   // $timeout(function(){
   // 	console.log($scope.listings)
   // },1000)
-  setTimeout(function(){
-    console.log($scope.listings)
-  },1000)
-
+ 
   setTimeout( function() {
     $scope.listings.forEach(function(listing){
       $interval(function(){
@@ -33,8 +30,7 @@ app.controller('MyListingsCtrl',function($scope, $interval, $rootScope, $state, 
         //console.log(listing.counter)
       },1000)
     })
-    console.log($scope.listings)
-  },1000)
+  },500)
 
 });
 
