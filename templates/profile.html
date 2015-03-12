@@ -1,16 +1,16 @@
 <div class="container">
-<div class="row">
+  <div class="row">
 
-<div class="col-sm-8 col-sm-offset-1" >
+    <div class="col-sm-8 col-sm-offset-2" >
 
 
-<div class="panel panel-info">
-<div class="panel-heading">
-<h3 class="panel-title">{{ user.username }}</h3>
-</div>
-<div class="panel-body">
-<div class="row">
-<div class="col-sm-3 col-lg-3 " align="center"> <img alt="User Pic" ng-src="{{ user.avatar }}"> </div>
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{ user.username }}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-3 col-lg-3 " align="center"> <img alt="User Pic" ng-src="{{ user.avatar }}"> </div>
 
 <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
 <dl>
@@ -25,59 +25,59 @@
 </dl>
 </div>-->
 <div class=" col-sm-9 col-lg-9 ">
-<table class="table table-user-information">
-<tbody>
-<tr>
-<td>Name:</td>
-<td>{{ user.name }}</td>
-</tr>
-<tr>
-<td>Email:</td>
-<td>{{ user.email }}</td>
-</tr>
+  <table class="table table-user-information">
+    <tbody>
+      <tr>
+        <td>Name:</td>
+        <td>{{ user.name }}</td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>{{ user.email }}</td>
+      </tr>
 
-<tr>
-<tr>
-<td>Member Since:</td>
-<td>{{ user.created_at | date:'longDate' }}</td>
-</tr>
-<td>Bio:</td>
-<td>
-{{ user.bio }}
-</td>
+      <tr>
+        <tr>
+          <td>Member Since:</td>
+          <td>{{ user.created_at | date:'longDate' }}</td>
+        </tr>
+        <td>Bio:</td>
+        <td>
+          {{ user.bio }}
+        </td>
 
-</tr>
+      </tr>
 
-</tbody>
-</table>
+    </tbody>
+  </table>
 
-<div class="text-left">
-<a ui-sref="^.mylistings" class="btn btn-primary">My Listings</a>
-<a ui-sref="^.myoffers" class="btn btn-primary">My Offers</a>
-</div>
+  <div class="text-left">
+    <a ui-sref="^.mylistings" class="btn btn-primary">My Listings</a>
+    <a ui-sref="^.myoffers" class="btn btn-primary">My Offers</a>
+  </div>
 </div>
 </div>
 </div>
 <div class="panel-footer">
-<a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary" href="mailto:helpme@sellme.io"><i class="glyphicon glyphicon-envelope"></i> Help</a>
-<span class="pull-right">
-<a href="#" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i> Edit</a>
-<a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"  ng-click="deleteUser()"><i class="glyphicon glyphicon-remove"></i>  Delete</a>
-</span>
+  <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary" href="mailto:helpme@sellme.io"><i class="glyphicon glyphicon-envelope"></i> Help</a>
+  <span class="pull-right">
+    <a href="#" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i> Edit</a>
+    <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"  ng-click="deleteUser()"><i class="glyphicon glyphicon-remove"></i>  Delete</a>
+  </span>
 </div>
 
 </div>
 
 <div class="row text-center">
-<div class="col-sm-3 ">
-	<p class=" text-info">{{ now | date:'mediumDate'}}</p>
+  <div class="col-sm-3 ">
+   <p class=" text-info">{{ now | date:'mediumDate'}}</p>
+ </div>
+ <div class="col-sm-7"></div>
+ <div class="col-sm-2">
+   <a href="#" ng-click="logout()" >Logout</a>
+ </div>
 </div>
-<div class="col-sm-7"></div>
-<div class="col-sm-2">
-	<a href="#" ng-click="logout()" >Logout</a>
-</div>
-</div>
-	
+
 <br>
 </div>
 </div>

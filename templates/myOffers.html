@@ -41,7 +41,7 @@
       <tr ng-repeat="offer in offers|orderBy:orderByField:reverseSort">
 
         <td><a ui-sref="main.offers({listingId: offer.listing.id})">{{offer.listing_product.name}}</a></td>
-       <td><a ui-sref="main.offers({listingId: offer.listing.id})">{{offer.user_details.username}}</a></td>
+       <td><a ui-sref="main.offers({listingId: offer.listing.id})"><a href="mailto:{{offer.user_details.email}}">{{offer.user_details.username}}</a></td>
         <td><a ui-sref="main.offers({listingId: offer.listing.id})">{{offer.product.name}}</a></td>
         <td>{{countDown(offer.listing.expires_at)}}</td>
         <td>{{offer.offer_price | currency}}</td>
