@@ -124,4 +124,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
      }
     })
+  .state('main.offer', {
+    url: '/offer',
+    views: {
+      'offer': {
+        templateUrl: 'templates/offer.html'
+      }
+     }
+    })    
 });

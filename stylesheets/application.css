@@ -103,3 +103,21 @@
 .login-btn {
   margin-left: 36%;
 }
+
+td.delete {
+  border: none !important;
+}
+
+table.table.table-bordered {
+  border-right: none;
+  border-bottom: none;
+}
+
+.offer_description {
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+}
+
+.offer_description_container {
+  padding: 5px;
+}
