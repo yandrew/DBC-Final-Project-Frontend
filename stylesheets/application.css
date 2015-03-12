@@ -121,3 +121,6 @@ table.table.table-bordered {
 .offer_description_container {
   padding: 5px;
 }
+a.btn.btn-primary.pull-right.btn-block.ng-binding {
+  width: 200px;
+}

@@ -3,9 +3,9 @@ var picsUrl = [];
 
 console.log('im in image controller')
 
-$scope.picsUrl = picsUrl;
+  $scope.complete = true
 
-  $scope.uploadProgress = 0;
+  $scope.uploadtrue = "Upload"
 
   $scope.upload = function() {
   	console.log('uploading in image controller')
@@ -27,10 +27,8 @@ $scope.picsUrl = picsUrl;
     if($scope.file) {
         var fileSize = Math.round(parseInt($scope.file.size));
         if (fileSize > 5292880) {
-          $scope.errorMSG = 'Sorry, your attachment is too big. Maximum 5MB file attachment allowed';
-          $timeout(function(){
-            $scope.errorMSG = null;
-          }, 5000)
+          $scope.complete = false;
+          $scope.uploadtrue = "Upload Failed, 5MB Max"
           return false;
         }
         // Unique String Generator
@@ -53,8 +51,11 @@ $scope.picsUrl = picsUrl;
           }
         })
         .on('httpUploadProgress',function(progress) {
-          $scope.uploadProgress = Math.round(progress.loaded / progress.total * 100);
-          $scope.$digest();
+          if (progress.loaded == progress.total){
+            $scope.complete = true;
+            $scope.uploadtrue = "Upload Successfull"
+            $scope.$digest();
+          }  
         })
       }
       else {
