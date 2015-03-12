@@ -8,20 +8,13 @@
       <tr>
         <th>
           <a href="#" ng-click="orderByField='title'; reverseSort = !reverseSort">
-<<<<<<< HEAD
-          Listing Title <span ng-show="orderByField == 'title'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
-=======
           Product listed <span ng-show="orderByField == 'title'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
->>>>>>> 54179609ec190d598a724718b447bae8bbd408f9
           </a>
         </th>
         <th>
           <a href="#" ng-click="orderByField='username'; reverseSort = !reverseSort">
-<<<<<<< HEAD
-          Username <span ng-show="orderByField == 'username'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
-=======
+
           Buyer <span ng-show="orderByField == 'username'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
->>>>>>> 54179609ec190d598a724718b447bae8bbd408f9
           </a>
         </th>
         <th>
@@ -54,11 +47,7 @@
         <td>{{countDown(offer.listing.expires_at)}}</td>
         <td>{{offer.offer_price | currency}}</td>
         <td>{{ listing.closed ? 'Closed' : 'Ongoing' }}</td>
-<<<<<<< HEAD
-        <td class="delete"><a href="#" ng-click="deleteOffer(offer.id, $index)">Delete Offer</a></td>
-=======
         <td class="delete"><a href="#" ng-click="deleteOffer(offer.id, $index)"><span class="glyphicon glyphicon-remove"></span> Cancel</a></td>
->>>>>>> 54179609ec190d598a724718b447bae8bbd408f9
       </tr>
     </tbody>
   </table>
