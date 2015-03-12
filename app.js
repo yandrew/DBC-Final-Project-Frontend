@@ -20,6 +20,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
         //User.update();
        }
     })
+    .state('test', {
+      url: '/test',
+      views: {
+        'test': {
+          templateUrl: 'templates/test.html',
+          controller: 'MyOffersCtrl'
+        }
+      }
+    })
     .state('main.listings', {
       url: '/listings',
       views: {
@@ -68,8 +77,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
           }
         },
         'comments': {
-          templateUrl: "templates/comments.html"
-        }
+        templateUrl: 'templates/comments.html',
+        controller: 'CommentsListingsCtrl',
+        resolve: {
+           listing: function($stateParams, Listing){
+             return Listing.findById($stateParams.listingId)
+           },
+           comment: function($stateParams, CommentListings)
+           {
+             return CommentListings.retrieve();
+           }
+         }
+       }
       }
     })
     .state('main.myoffers',{
@@ -127,15 +146,26 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
      }
     })
-  .state('main.offer', {
-    url: '/offer',
+    .state('main.offer', {
+    url: '/offers/{listingId:int}',
     views: {
       'offer': {
-        templateUrl: 'templates/offer.html',
+        templateUrl: 'templates/offer.html'
       },
       'comments': {
-        templateUrl: 'templates/comments.html'
+        templateUrl: 'templates/comments.html',
+        controller: 'CommentsListingsCtrl',
+        resolve: {
+           listing: function($stateParams, Listing){
+             return Listing.findById($stateParams.listingId)
+           },
+           comment: function($stateParams, CommentListings)
+           {
+             return CommentListings.retrieve();
+           }
+         }
+       }
       }
-     }
     })
+
 });
