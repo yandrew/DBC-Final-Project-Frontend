@@ -1,8 +1,10 @@
-app.controller('NewUserCtrl', function($scope, User, Auth) {
+app.controller('NewUserCtrl', function($scope, $rootScope, User, Auth) {
 
 	$scope.newUser = {};
 
 	$scope.makeUser = function() {
+		$scope.newUser.avatar = $rootScope.avatar
+		$rootScope.avatar = false		
 		User.postNew($scope.newUser)
 		.then(function(res){
 			console.log("post made", res)

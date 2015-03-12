@@ -25,12 +25,18 @@
 		<textarea class="form-control" rows="3" id="userbio" placeholder="Tell us a little about you" ng-model="newUser.bio"></textarea>
     </div>
   </div>
-  <div class="form-group">
-    <label for="useravatar" class="col-sm-2 control-label">Avatar</label>
+ <div class="form-group" ng-controller="ImageCtrl">
+    <label for="useravatar" class="col-sm-2 control-label">Select Image</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="useravatar" placeholder="A link to a picture that represents you" ng-model="newUser.avatar">
+      <div class="col-sm-4">
+      <input class="form-control" id="useravatar" type="file" name="file" file placeholder="A link to a picture that represents you">
+      </div>
+      <div class="col-sm-2"><a class="btn btn-primary pull-right" ng-click="upload()">Upload</a></div>
+    <div class="col-sm-4 col-sm-offset-2">
+      <div class="alert alert-info" role="alert" ng-if="uploaded">Picture uploaded</div>
     </div>
-  </div>
+    </div>
+  </div>  
   <div class="form-group">
     <label for="userpassword" class="col-sm-2 control-label">Password</label>
     <div class="col-sm-10">
