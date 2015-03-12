@@ -4,6 +4,7 @@ app.service('Timer',function() {
 		var ending = new Date(startDate).getTime();
   	var timeNow = new Date().getTime();
   	var differ = ending - timeNow;
+    //console.log(Date(differ))
   	// console.log(differ);
   	if (differ < 0){
   		return "expired!";
@@ -18,14 +19,26 @@ app.service('Timer',function() {
 		var hours = Math.floor((differ % _day) /_hour);
 		var minutes = Math.floor((differ % _hour)/ _minute);
 		var seconds = Math.floor((differ % _minute)/(_second));
+    console.log('days', days)
+    console.log('hours', hours)
+    console.log('minutes', minutes)
+    console.log('seconds', seconds)
+
+    // return days + " days " + hours + " hrs " + minutes + " minutes " + seconds + " s"
    	
    	if (days > 1){
    		return days + " days ";
    	
-   	} else if (days < 1  && hours > 0) {
-   		return hours + " hrs " + minutes + " minutes " + seconds + " s";
+   	} else if (days == 1  && hours >= 6) {
+   		return hours + " hrs " + minutes + " minutes ";
    	
-   	} else if (hours < 1 && minutes > 1){
+   	} else if (days == 1  && hours < 6) {
+      return hours + " hrs " + minutes + " minutes " + seconds + " s";
+    
+    } else if (days < 1 && hours > 1 ){
+      return hours + " hrs " + minutes + " minutes " + seconds + " s";
+
+    } else if (hours <= 1 && minutes >= 1){
    		return minutes + " minutes " + seconds + " s";
    	
    	} else if (minutes < 1){
