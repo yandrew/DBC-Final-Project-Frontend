@@ -118,7 +118,11 @@ table.table.table-bordered {
   border-radius: 5px;
 }
 
-.offer_description_container {
+.offer_description_container, .offer_image_container {
   padding: 5px;
 }
+
+.offer_image {
+  max-width: 450px;
+  max-height: 350px;}
 

@@ -126,10 +126,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
   .state('main.offer', {
     url: '/offer',
-    views: {
-      'offer': {
-        templateUrl: 'templates/offer.html'
-      }
-     }
+      views: {
+        'main-container': {
+          templateUrl: 'templates/maincontainer.html'
+        },
+        'bottom-': {
+          templateUrl: 'templates/topmenu.html',
+          controller: 'TopMenuCtrl'
+        }
+      },
+       onEnter: function(Listing, User) {
+        Listing.update();
+        //User.update();
+       }
     })
 });

@@ -10,7 +10,11 @@
         </div>
         <div class="panel-body">
           <div class="row">
-            <div class="col-sm-6" align="center"> <img alt="User Pic" style="max-height: 195px" ng-src="http://www.greatamericanthings.net/wp-content/uploads/2011/12/Spartacus-by-hercxena.wikiadotcom.jpg"> </div>
+            <div class="col-sm-6" align="center">
+              <div class="offer_image_container">
+                <img alt="User Pic" class="offer_image" style="max-height: 350px;" ng-src="http://www.greatamericanthings.net/wp-content/uploads/2011/12/Spartacus-by-hercxena.wikiadotcom.jpg">
+              </div>
+            </div>
 
 <div class=" col-sm-6">
   <table class="table table-user-information">
@@ -65,6 +69,14 @@
   <div class="col-sm-3 ">
     <p class=" text-info">{{ now | date:'mediumDate'}}</p>
   </div>
+<div class="content" ng-controller="appCtrl">
+    <div class="field">
+        <button ng-click="showPopup = true" >Show Popup</button>
+        <div ng-show="showPopup" class="popup" ng-mouseleave='showPopup = false'>
+            <input type="text">
+        </div>
+    </div>
+</div>
   <div class="col-sm-7"></div>
 
 </div>

@@ -12,6 +12,8 @@
   <script src="libraries/angular-ui-router.js"></script>
   <script src="libraries/angular-cookies.js"></script>
   <script src="libraries/moment.js"></script>
+  <src="https://code.angularjs.org/1.2.9/angular.min.js"></script>
+  <script src="https://rawgit.com/dwmkerr/angular-modal-service/master/dst/angular-modal-service.js"></script>
 
   <!-- AppFiles -->
   <script src="app.js"></script>
@@ -21,7 +23,7 @@
   <script src="services/products.js"></script>
   <script src="services/listings.js"></script>
   <script src="services/userListings.js"></script>
-    <script src="services/userOffers.js"></script>
+  <script src="services/userOffers.js"></script>
 
   <script src="services/countdown_service.js"></script>
   <script src="services/offers.js"></script>
@@ -66,6 +68,9 @@
     <div ui-view="main-container"></div>
   </div>
 
+  <div class="col col-sm-10 col-sm-offset-1">
+    <div ui-view="bottom-container"></div>
+  </div>
 </body>
 </html>
 
