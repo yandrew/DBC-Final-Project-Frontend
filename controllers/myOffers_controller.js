@@ -15,9 +15,20 @@ app.controller('MyOffersCtrl', function($scope, $interval, Offer, $stateParams, 
 
   // Offer.update($stateParams.user_id);
   // $scope.offers = Offer.all();
+  
+
   $scope.countDown = function(timeEnd) {
     return Timer.countdown(timeEnd);
   };
+  // setTimeout( function() {
+  //   $scope.listings.forEach(function(listing){
+  //     $interval(function(){
+  //       listing.counter = Timer.countdown(listing.expires_at)
+  //       //console.log(listing.counter)
+  //     },1000)
+  //   })
+  // },500)
+
 
   $scope.deleteOffer = function(offerId, index){
   	Offer.remove(offerId, $scope.loggedUser)

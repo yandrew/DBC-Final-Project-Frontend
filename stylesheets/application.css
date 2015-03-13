@@ -20,8 +20,16 @@
 
 }
 
-.profile_panel_shadow{
+.username-label {
+  color: #1C1614;
+}
+
+.profile_panel_shadow, .table-shadow, .btn-primary, .btn-default {
     box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+}
+
+.table-shadow {
+  margin-bottom: 0px;
 }
 
 .img-responsive {
@@ -36,6 +44,9 @@ body {
   margin-bottom: 0px;
 }
 
+.listing-offers-image{
+  padding-top: 0px !important;
+}
 .listing-image {
   padding-top: 10px;
   border-radius: 6px;
@@ -51,14 +62,43 @@ tr.listing_header {
   border-bottom: 3px solid #d0d0d0;
 }
 
+.member-since {
+  width: 1px;
+}
 /*testing above with columns ----------*/
 
+.profile-username-header {
+  background-color: #A69785 !important;
+}
+
+.center {
+  text-align: center; 
+  font-size: 24px;
+}
 
 
 @font-face { 
   font-family: Catull; 
   src: url('../fonts/Catull.ttf'); 
 } 
+
+p, h1,h2,h3, td, tr {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+h1,h2,h3 {
+  font-weight: 700 !important;
+}
+
+p, td {
+  font-size: 15px;
+}
+
+hr {
+  color: #d0d0d0;
+  border-top: 1px solid #d0d0d0;
+}
+
 
 .main-page-title {
   font-family: Catull, sans-serif;
@@ -195,8 +235,6 @@ a.btn.btn-primary.pull-right.btn-block.ng-binding {
 
 .create_listing_button {
   /* display: inline; */
-  margin-left: auto;
-  margin-right: auto;
-  width: 1%;
+  text-align: center;
   padding: 10px;
 }

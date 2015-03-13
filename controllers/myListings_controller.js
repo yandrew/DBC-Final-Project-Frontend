@@ -28,7 +28,7 @@ app.controller('MyListingsCtrl',function($scope, $interval, $rootScope, $state, 
       $interval(function(){
         listing.counter = Timer.countdown(listing.expires_at)
         //console.log(listing.counter)
-      },1000)
+      },500)
     })
   },500)
 

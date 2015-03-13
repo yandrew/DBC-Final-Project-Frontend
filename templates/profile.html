@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-sm-10 col-sm-offset-1" >
+    <div class="col-sm-8 col-sm-offset-2" >
 
 
       <div class="panel panel-info profile_panel_shadow">
-        <div class="panel-heading">
-          <h3 class="panel-title">{{ user.username }}</h3>
+        <div class="panel-heading profile-username-header">
+          <h3 class="panel-title center username-label">{{ user.username }}</h3>
         </div>
         <div class="panel-body">
           <div class="row">
@@ -20,20 +20,20 @@
               <table class="table table-user-information">
                 <tbody>
                   <tr>
-                    <td>Name:</td>
+                    <td><b>Name:</b></td>
                     <td>{{ user.name }}</td>
                   </tr>
                   <tr>
-                    <td>Email:</td>
+                    <td><b>Email:</b></td>
                     <td>{{ user.email }}</td>
                   </tr>
 
                   <tr>
                     <tr>
-                      <td>Member Since:</td>
+                      <td class="member-since"><b>Member Since:</b></td>
                       <td>{{ user.created_at | date:'longDate' }}</td>
                     </tr>
-                    <td>Bio:</td>
+                    <td><b>Bio:</b></td>
                     <td>
                       {{ user.bio }}
                     </td>
