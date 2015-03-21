@@ -1,0 +1,54 @@
+
+<div ui-view="listing-details">
+<div class="col col-sm-12">
+<h3 class="lead">My Listings</h3>
+<hr>
+ <section class="listing_details">
+  <div class="alert alert-success" role="alert" ng-if="message">{{ message }}</div>
+  <table class="table table-bordered table-shadow" ng-cloak>
+    <thead>
+      <tr class="listing_header">
+        <th>
+          <a  href="#" ng-click="orderByField='name'; reverseSort = !reverseSort">
+          Product Title <span ng-show="orderByField == 'name'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+        <th>
+          <a href="#" ng-click="orderByField='expires_at'; reverseSort = !reverseSort">
+            Ending <span ng-show="orderByField == 'expires_at'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+        <th>
+        <a  href="#" ng-click="orderByField='offers'; reverseSort = !reverseSort">
+          Offers <span ng-show="orderByField == 'offers'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+        <th>
+          <a href="#" ng-click="orderByField='max_price'; reverseSort = !reverseSort">
+          Price <span ng-show="orderByField == 'max_price'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+        <th>
+          <a href="#" ng-click="orderByField='max_price'; reverseSort = !reverseSort">
+          Status <span ng-show="orderByField == 'max_price'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="listing in listings|orderBy:orderByField:reverseSort">
+        <td><a ui-sref="^.listing({listingId: listing.listing_id})">{{listing.name}}</a></td>
+        <td>{{ listing.counter }}</td>
+        <td>{{listing.offers.length}}</td>
+        <td>{{listing.max_price | currency}}</td>
+        <td>{{ listing.closed ? 'Closed' : 'Ongoing' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<div class="create_listing_button">
+<button class="btn btn-primary" ui-sref="main.newListing">Create a new listing</button>
+</div>
+
+</div>
+</div>

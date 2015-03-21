@@ -1,0 +1,55 @@
+<div class="col col-sm-10">
+<h3 class="lead text-center">Product Details </h3>
+<p style="text-align: center;"><a href="#" ng-click="deleteListing()" ng-if="!listing.closed">Cancel this listing</a></p>
+<hr>
+<div class="col col-sm-6">
+  <img  class="listing-image" ng-src="{{ listing.image_url }}">
+</div>
+<div class="col col-sm-4">
+  <p>{{ listing.name }}</p>
+  <p><a href="mailto:{listing.email}">{{ listing.username }}</a></p>
+  <p>{{ listing.category }}</p>
+  <p>{{ listing.description }}</p>
+  <p>{{ listing.condition }}</p>
+  <p>{{ listing.max_price | currency }}</p>
+</div>
+</div>
+
+<br>
+
+<div class="col col-sm-10 alert alert-warning text-center" role="alert" ng-if="message">{{ message }}</div>
+
+<div class="col col-sm-10">
+<h3 class="lead text-center">Ongoing offers</h3>
+<hr>
+<div ng-if="!listing.closed && offers.length > 0">
+  <div class="col col-sm-4" ng-repeat="offer in offers">
+    <div class="thumbnail text-center" >
+      <img class="listing-image img-responsive" ng-src="{{ offer.image_url }}">
+      <div class="caption">
+        <h3>{{ offer.name }}</h3>
+        <p>{{ offer.description }}</p>
+        <p>Bid: <strong>{{ offer.offer_price | currency }}</strong></p>
+      </div>
+    <button class="btn btn-primary" ng-click="acceptOffer(offer.offer_id, $index)">Accept</button>
+    </div>
+  </div>
+</div>
+<div ng-if="(!listing.closed && offers.length === 0)" class="text-center">
+  <p>You have no offers.</p>
+</div>
+<div ng-if="(listing.closed)" class="text-center">
+  <p>This listing has been closed. Congratulations on your purchase!</p>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sellMe">
+<head>
+  <meta charset="UTF-8">
+  <title>Sell Me</title>
+  <!-- Angular + Bootstrap-->
+  <script src="libraries/angular.js"></script>
+  <script src="libraries/angular-ui-router.js"></script>
+  <script src="libraries/angular-animate.min.js"></script>
+  <script src="libraries/angular-strap.min.js"></script>
+  <script src="libraries/angular-strap.tpl.min.js"></script>
+  <script src="libraries/angular-ui-router.js"></script>
+  <script src="libraries/angular-cookies.js"></script>
+  <script src="libraries/moment.js"></script>
+  <script src="libraries/aws-sdk.min.js"></script>  
+
+  <!-- AppFiles -->
+  <script src="app.js"></script>
+  <script src="directives/imageDirective.js"></script>  
+  <script src="services/listings.js"></script>
+  <script src="services/offers.js"></script>
+  <script src="services/users.js"></script>
+  <script src="services/products.js"></script>
+  <script src="services/listings.js"></script>
+  <script src="services/userListings.js"></script>
+    <script src="services/userOffers.js"></script>
+
+  <script src="services/countdown_service.js"></script>
+  <script src="services/offers.js"></script>
+  <script src="services/auth.js"></script>
+  <script src="services/categoryService.js"></script>
+  <script src="controllers/topmenu_controller.js"></script>
+  <script src="controllers/image_controller.js"></script>
+  <script src="controllers/listings_controller.js"></script>
+  <script src="controllers/offers_controller.js"></script>
+  <script src="controllers/new_listing_controller.js"></script>
+  <script src="controllers/new_user_controller.js"></script>
+  <script src="controllers/search_controller.js"></script>
+  <script src="controllers/myListings_controller.js"></script>
+  <script src="controllers/myOffers_controller.js"></script>
+  <script src="controllers/listing_controller.js"></script>
+  <script src="controllers/profile_controller.js"></script>
+  <script src="controllers/login_controller.js"></script>
+
+
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/angular-motion.min.css">
+  <link rel="stylesheet" href="stylesheets/application.css">
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Pontano+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+  <div class="page-header text-center main-page-title">
+    <h1>SellMe.io</h1>
+  </div>
+
+  <div class="container">
+
+  <div class="menu-main-page row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div ui-view="top-menu"></div>
+    <div class="col col-sm-2"></div>
+  </div>
+
+
+    </div>
+  </div>
+
+  <div class="col col-sm-10 col-sm-offset-1">
+    <div ui-view="main-container"></div>
+  </div>
+
+</body>
+</html>
+
+

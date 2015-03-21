@@ -1,0 +1,54 @@
+ <div class="col col-sm-12">
+<h3 class="lead">My Offers</h3>
+<hr>
+<section class="listing_details">
+  <div class="alert alert-success" role="alert" ng-if="message">{{ message }}</div>
+  <table class="table table-bordered table-shadow">
+    <thead>
+      <tr class="listing_header">
+        <th>
+          <a href="#" ng-click="orderByField='title'; reverseSort = !reverseSort">
+          Product listed <span ng-show="orderByField == 'title'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+        <th>
+          <a href="#" ng-click="orderByField='username'; reverseSort = !reverseSort">
+          Buyer <span ng-show="orderByField == 'username'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+        <th>
+          <a href="#" ng-click="orderByField='name'; reverseSort = !reverseSort">
+          Product offered <span ng-show="orderByField == 'name'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+        <th>
+          <a href="#" ng-click="orderByField='expires_at'; reverseSort = !reverseSort">
+            Ending <span ng-show="orderByField == 'expires_at'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+        <th>
+          <a href="#" ng-click="orderByField='max_price'; reverseSort = !reverseSort">
+          Offer Price <span ng-show="orderByField == 'max_price'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+        <th>
+          <a href="#" ng-click="orderByField='status'; reverseSort = !reverseSort">
+          Status <span ng-show="orderByField == 'status'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </a>
+        </th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="offer in offers|orderBy:orderByField:reverseSort">
+
+        <td><a ui-sref="main.offers({listingId: offer.listing.id})">{{offer.listing_product.name}}</a></td>
+       <td><a ui-sref="main.offers({listingId: offer.listing.id})"><a href="mailto:{{offer.user_details.email}}">{{offer.user_details.username}}</a></td>
+        <td><a ui-sref="main.offers({listingId: offer.listing.id})">{{offer.product.name}}</a></td>
+        <td>{{countDown(offer.listing.expires_at)}}</td>
+        <td>{{offer.offer_price | currency}}</td>
+        <td>{{ listing.closed ? 'Closed' : 'Ongoing' }}</td>
+        <td class="delete"><a href="#" ng-click="deleteOffer(offer.id, $index)"><span class="glyphicon glyphicon-remove"></span> Cancel</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+</div>

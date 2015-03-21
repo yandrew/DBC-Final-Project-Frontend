@@ -1,0 +1,239 @@
+.listings_row {
+ -moz-column-width: 25em;
+ -webkit-column-width: 25em;
+ -moz-column-gap: 10px;
+ -webkit-column-gap:10px; 
+  
+}
+
+.row > .listings_col {
+  display: inline-block;
+  padding: 0;
+  margin: 10px;
+  width:  100%; 
+  float:none;
+  /*border: 1px solid #D0D0D0;*/
+  border-radius: 5px;
+  /*padding-top: 10px;*/
+
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+
+}
+
+.username-label {
+  color: #1C1614;
+}
+
+.profile_panel_shadow, .table-shadow, .btn-primary, .btn-default {
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+}
+
+.table-shadow {
+  margin-bottom: 0px;
+}
+
+.img-responsive {
+  border: 0px solid #999;
+}
+
+body {
+  background-color: #E9E9E9;
+}
+
+.listing_thumbnail {
+  margin-bottom: 0px;
+}
+
+.listing-offers-image{
+  padding-top: 0px !important;
+}
+.listing-image {
+  padding-top: 10px;
+  border-radius: 6px;
+}
+
+.listing_details {
+  background-color: white;
+  border: 1px solid#D0D0E0;
+  border-radius: 5px;
+}
+
+tr.listing_header {
+  border-bottom: 3px solid #d0d0d0;
+}
+
+.member-since {
+  width: 1px;
+}
+/*testing above with columns ----------*/
+
+.profile-username-header {
+  background-color: #A69785 !important;
+}
+
+.center {
+  text-align: center; 
+  font-size: 24px;
+}
+
+
+@font-face { 
+  font-family: Catull; 
+  src: url('../fonts/Catull.ttf'); 
+} 
+
+p, h1,h2,h3, td, tr {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+h1,h2,h3 {
+  font-weight: 700 !important;
+}
+
+p, td {
+  font-size: 15px;
+}
+
+hr {
+  color: #d0d0d0;
+  border-top: 1px solid #d0d0d0;
+}
+
+
+.main-page-title {
+  font-family: Catull, sans-serif;
+  font-size: 30px;
+}
+
+.search-bar-container {
+  text-align: center;
+
+}
+
+.small-lead{
+  font-size: 16px;
+}
+
+.search-field {
+  padding: 15px 10px;
+  line-height: 18px;
+  width: 300px;
+}
+
+.search-submit {
+  padding: 15px 10px;
+  line-height: 18px;
+  width: 100px;
+}
+
+.panel-mycolor .panel-heading{
+  background-color: SteelBlue;
+}
+
+.listing-image {
+  width: 100px;
+  height: auto;
+}
+
+/*.listing_wrapper {
+  height: 420px;
+  overflow-y: auto;
+}*/
+
+.search-container {
+  margin: 10px;
+  text-align: center;
+}
+
+.search-container {
+  margin-bottom: 30px ;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+}
+
+.listing-image {
+  width: 300px;
+}
+
+
+.make-offer {
+  clear: both;
+  padding-top: 10px;
+}
+
+.title {
+  margin-right: 65%;
+  margin-left: 50%;
+}
+
+/*Logins*/
+.login-header {
+  float: right;
+  width: 10%;
+  margin-top: -3%;
+}
+
+.login-btn {
+  float: right;
+  display: block;
+  padding: 5px;
+  margin: 3px 3px;
+}
+
+.login-btn a {
+  color: #d0d0d0;
+}
+
+.login-form {
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.ul-login{
+  float: right;
+}
+
+.login-btn {
+  margin-left: 36%;
+}
+
+td.delete {
+  border: none !important;
+}
+
+table.table.table-bordered {
+  border-right: none;
+  border-bottom: none;
+}
+
+.offer_description {
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+}
+
+.offer_description_container {
+  padding: 5px;
+}
+a.btn.btn-primary.pull-right.btn-block.ng-binding {
+  width: 200px;
+}
+
+.profile_image_container img {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.panel-info>.panel-heading, 
+.panel-info {
+  border-color: #C6C5C3;
+}
+
+.create_listing_button {
+  /* display: inline; */
+  text-align: center;
+  padding: 10px;
+}

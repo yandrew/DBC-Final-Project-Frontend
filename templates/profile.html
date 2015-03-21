@@ -1,0 +1,76 @@
+
+  <div class="row">
+
+    <div class="col-sm-8 col-sm-offset-2" >
+
+
+      <div class="panel panel-info profile_panel_shadow">
+        <div class="panel-heading profile-username-header">
+          <h3 class="panel-title center username-label">{{ user.username }}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-4 col-lg-4 " align="center">
+              <div class="profile_image_container"> 
+                <img alt="User Pic" ng-src="{{ user.avatar }}"> 
+              </div>
+            </div>
+
+            <div class=" col-sm-8 col-lg-8 ">
+              <table class="table table-user-information">
+                <tbody>
+                  <tr>
+                    <td><b>Name:</b></td>
+                    <td>{{ user.name }}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Email:</b></td>
+                    <td>{{ user.email }}</td>
+                  </tr>
+
+                  <tr>
+                    <tr>
+                      <td class="member-since"><b>Member Since:</b></td>
+                      <td>{{ user.created_at | date:'longDate' }}</td>
+                    </tr>
+                    <td><b>Bio:</b></td>
+                    <td>
+                      {{ user.bio }}
+                    </td>
+
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <div class="text-left">
+                <a ui-sref="^.mylistings" class="btn btn-primary">My Listings</a>
+                <a ui-sref="^.myoffers" class="btn btn-primary">My Offers</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary" href="mailto:helpme@sellme.io"><i class="glyphicon glyphicon-envelope"></i> Help</a>
+          <span class="pull-right">
+            <a href="#" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i> Edit</a>
+            <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"  ng-click="deleteUser()"><i class="glyphicon glyphicon-remove"></i>  Delete</a>
+          </span>
+        </div>
+
+      </div>
+
+      <div class="row text-center">
+        <div class="col-sm-3 ">
+         <p class=" text-info">{{ now | date:'mediumDate'}}</p>
+       </div>
+       <div class="col-sm-7"></div>
+       <div class="col-sm-2">
+         <a href="#" ng-click="logout()" >Logout</a>
+       </div>
+     </div>
+
+     <br>
+   </div>
+ </div>
+
