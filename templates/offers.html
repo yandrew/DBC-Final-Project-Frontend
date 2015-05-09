@@ -1,19 +1,25 @@
 
-<div class="col col-sm-9 col-sm-offset-2">
-  <h3 class="lead text-center">Product Details </h3>
-  <hr>
-  <div class="col col-sm-5">
-    <img  class="listing-image listing-offers-image" ng-src="{{ listing.image_url }}">
+
+  
+  <div class="col col-sm-9 col-sm-offset-2">
+    <h3 class="lead text-center">Product Details </h3>
+    <hr>
   </div>
-  <div class="col col-sm-6">
-    <p><b>Listing Title:</b> {{ listing.name }}</p>
-    <p><b>User:</b> <a href="mailto: {{listing.email}}">{{ listing.username }}</a></p>
-    <p><b>Category:</b> {{ listing.category }}</p>
-    <p><b>Condition:</b> {{ listing.condition }}</p>
-    <p><b>Listing Price:</b> {{ listing.max_price | currency }}</p>
-    <p><b>Listing Description:</b> {{ listing.description }}</p>
+  <div class="row">
+    <div class="col col-sm-5">
+      <img  class="listing-image listing-offers-image img-responsive" ng-src="{{ listing.image_url }}">
+    </div>
+    <br>
+    <div class="col col-sm-6">
+      <p><b>Listing Title:</b> {{ listing.name }}</p>
+      <p><b>User:</b> <a href="mailto: {{listing.email}}">{{ listing.username }}</a></p>
+      <p><b>Category:</b> {{ listing.category }}</p>
+      <p><b>Condition:</b> {{ listing.condition }}</p>
+      <p><b>Listing Price:</b> {{ listing.max_price | currency }}</p>
+      <p><b>Listing Description:</b> {{ listing.description }}</p>
+    </div>
   </div>
-</div>
+
 
 <br>
 
@@ -23,7 +29,7 @@
 
 
   <div ng-if="(!listing.closed && offers.length > 0)">
-    <div class="col col-sm-4" ng-repeat="offer in offers">
+    <div class="col col-sm-4 col-xs-10 col-xs-offset-1" ng-repeat="offer in offers">
       <div class="thumbnail text-center" >
         <img class="listing-image img-responsive" ng-src="{{ offer.image_url }}">
         <div class="caption">

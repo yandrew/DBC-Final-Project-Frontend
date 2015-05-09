@@ -8,11 +8,10 @@
       </span>
     </div><!-- /input-group -->
   </div><!-- /.col-sm-6 -->
-  <div class="col col-sm-3"></div>
 </div>
 
 <div class="row vcenter listings_row">
-  <div class="col col-sm-4 listings_col img-responsive" ng-repeat="listing in listings | filter: queryTerm">
+  <div class="col col-sm-4 col-xs-8 listings_col img-responsive" ng-repeat="listing in listings | filter: queryTerm">
     <div class="listing_wrapper">
       <div class="thumbnail text-center listing_thumbnail">
         <img class="listing-image" ng-src="{{ listing.image_url }}">
