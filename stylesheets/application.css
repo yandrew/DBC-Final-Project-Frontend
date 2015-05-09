@@ -40,6 +40,10 @@ body {
   background-color: #E9E9E9;
 }
 
+.details {
+  /*margin-left:10%;*/
+}
+
 .listing_thumbnail {
   margin-bottom: 0px;
 }
@@ -50,6 +54,8 @@ body {
 .listing-image {
   padding-top: 10px;
   border-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .listing_details {
